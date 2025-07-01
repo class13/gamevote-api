@@ -6,6 +6,7 @@ import at.tailor.gamevoteapi.party.controller.data.BeerDTO
 import at.tailor.gamevoteapi.party.controller.data.PartyDTO
 import at.tailor.gamevoteapi.party.controller.data.PatchPartyDTO
 import at.tailor.gamevoteapi.party.controller.data.StringValue
+import at.tailor.gamevoteapi.party.service.domain.BeerService
 import at.tailor.gamevoteapi.party.service.domain.data.Party
 import at.tailor.gamevoteapi.party.service.domain.PartyService
 import at.tailor.gamevoteapi.party.service.domain.data.Beer
@@ -19,11 +20,13 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import java.time.LocalDateTime
 
 @RestController
 @RequestMapping("/parties")
 class PartyController(
-    val partyService: PartyService
+    val partyService: PartyService,
+    val beerService: BeerService
 ) {
 
     @PostMapping
@@ -110,6 +113,11 @@ class PartyController(
     @PostMapping("/{code}/beers")
     fun postBeer(@PathVariable("code") code: String, @RequestBody beer: BeerDTO) {
         partyService.postBeer(partyService.getIdForCode(code), Beer(attendee = beer.attendee))
+    }
+
+    @GetMapping("/{code}/beers/summary")
+    fun getBeerSummary(@PathVariable("code") code: String): Map<String, Map<LocalDateTime, Int>> {
+       return beerService.createHourlySummary(partyService.getIdForCode(code))
     }
 
 }
