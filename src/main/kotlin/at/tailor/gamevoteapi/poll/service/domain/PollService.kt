@@ -126,11 +126,15 @@ class PollService(
 
     }
 
+    // options are randomised before ranking by votes
+    // this means that if two options have the same winning votes, the winner is random
+    // this result will be persisted in the party,
+    // therefore is not randomised for every user, but once for all when the poll completes
     @Transactional
     fun getResults(id: Long): Map<String, Int> {
         val pollEntity = pollRepository.findById(id).orElseThrow{ ResponseStatusException(HttpStatus.NOT_FOUND) }
         val votes = getVotes(id)
-        return pollEntity.options.associateWith { option -> votes.map { it.value[option] ?: 0 }.sum() }
+        return pollEntity.options.shuffled().associateWith { option -> votes.map { it.value[option] ?: 0 }.sum() }
             .map { it }
             .sortedByDescending { it.value }
             .associate { it.toPair() }
