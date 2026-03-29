@@ -28,7 +28,7 @@ COPY . .
 RUN mvn package
 
 # Use a base image with just Java installed
-FROM openjdk:17-slim
+FROM eclipse-temurin:17-jre-jammy
 
 # Set the working directory to /app
 WORKDIR /app

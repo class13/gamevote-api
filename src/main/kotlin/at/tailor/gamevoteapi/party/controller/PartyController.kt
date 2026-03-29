@@ -120,6 +120,11 @@ class PartyController(
        return beerService.createHourlySummary(partyService.getIdForCode(code))
     }
 
+    @GetMapping("/{code}/beers/summary/cumulative")
+    fun getCumulativeBeerSummary(@PathVariable("code") code: String): Map<String, Map<LocalDateTime, Int>> {
+       return beerService.createCumulativeHourlySummary(partyService.getIdForCode(code))
+    }
+
 }
 
 
