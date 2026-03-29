@@ -15,10 +15,6 @@ services:
       - gamevote-db
     build:
       context: .
-      args:
-        JDBC_DRIVER_GROUP_ID: org.postgresql
-        JDBC_DRIVER_ARTIFACT_ID: postgresql
-        JDBC_DRIVER_VERSION: 42.5.3
     ports:
       - "8080:8080"
     expose:

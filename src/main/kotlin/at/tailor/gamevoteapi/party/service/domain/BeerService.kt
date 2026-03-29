@@ -4,6 +4,7 @@ import at.tailor.gamevoteapi.party.service.persistence.BeerRepository
 import at.tailor.gamevoteapi.party.service.persistence.PartyRepository
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.server.ResponseStatusException
 import java.time.LocalDateTime
 
@@ -12,6 +13,8 @@ class BeerService(
     val beerRepository: BeerRepository,
     val partyRepository: PartyRepository
 ) {
+
+    @Transactional
     fun createHourlySummary(partyId: Long): Map<String, Map<LocalDateTime, Int>> {
         val timeline = buildTimeline(partyId)
         return timeline.attendees.associateWith { attendee ->
@@ -21,6 +24,7 @@ class BeerService(
         }
     }
 
+    @Transactional
     fun createCumulativeHourlySummary(partyId: Long): Map<String, Map<LocalDateTime, Int>> {
         val timeline = buildTimeline(partyId)
         return timeline.attendees.associateWith { attendee ->
