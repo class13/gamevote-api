@@ -1,1 +1,1 @@
-- [ ] fix weird driver issue
+- [ ] replace the `at.tailor:driver` alias setup with a direct `org.postgresql:postgresql` dependency and simplify the Docker build
