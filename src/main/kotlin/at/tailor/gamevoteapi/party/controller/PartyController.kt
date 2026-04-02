@@ -75,6 +75,7 @@ class PartyController(
 
     @PostMapping("/{code}/options")
     fun postOption(@PathVariable("code") code: String, @RequestBody value: StringValue): StringValue {
+        // TODO: add the option to the users log
         partyService.addOption(partyService.getIdForCode(code), value.value)
         return value
     }
