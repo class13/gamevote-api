@@ -113,10 +113,12 @@ class PartyService(
     }
 
     @Transactional
-    fun addOption(id: Long, value: String) {
+    fun addOption(id: Long, option: String, attendeeId: Int? = null) {
+        // TODO: add the option to the users log
+        // TODO: take a user parameter  
         val partyEntity = partyRepository.findById(id).orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) }
         val newOptions = partyEntity.options.toMutableSet()
-        newOptions += value
+        newOptions += option
         partyEntity.options = newOptions.toMutableList()
         partyRepository.save(partyEntity)
     }

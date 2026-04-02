@@ -74,10 +74,12 @@ class PartyController(
     }
 
     @PostMapping("/{code}/options")
-    fun postOption(@PathVariable("code") code: String, @RequestBody value: StringValue): StringValue {
+    fun postOption(
+        @PathVariable("code") code: String, 
+        @RequestBody value: StringValue
+      ): StringValue {
         // TODO: add the option to the users log
-        // TODO: actually this needs to be a different endpoint, since this api is agnostic about which user does which action
-        // TODO: actually the endpoint could also take a user parameter
+        // TODO: take a user parameter
         partyService.addOption(partyService.getIdForCode(code), value.value)
         return value
     }
