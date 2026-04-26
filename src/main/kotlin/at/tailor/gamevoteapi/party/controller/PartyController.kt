@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -71,6 +72,15 @@ class PartyController(
     fun getOptions(@PathVariable("code") code: String): Set<String> {
         val party = partyService.getParty(partyService.getIdForCode(code))
         return toDTO(party).options
+    }
+
+    @GetMapping("/{code}/options/suggestions")
+    fun getOptionSuggestions(
+        @PathVariable("code") code: String,
+        @RequestParam("query") query: String,
+        @RequestParam("limit", defaultValue = "10") limit: Int
+    ): List<String> {
+        return partyService.suggestOptions(partyService.getIdForCode(code), query, limit)
     }
 
     @PostMapping("/{code}/options")

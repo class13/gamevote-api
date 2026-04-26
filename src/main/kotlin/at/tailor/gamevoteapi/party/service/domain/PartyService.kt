@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.server.ResponseStatusException
 import java.lang.IndexOutOfBoundsException
 import java.util.*
+import kotlin.math.min
 
 @Service
 class PartyService(
@@ -121,6 +122,31 @@ class PartyService(
         newOptions += option
         partyEntity.options = newOptions.toMutableList()
         partyRepository.save(partyEntity)
+    }
+
+    @Transactional(readOnly = true)
+    fun suggestOptions(id: Long, query: String, limit: Int = 10): List<String> {
+        partyRepository.findById(id).orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) }
+
+        val normalizedQuery = query.trim()
+        if (normalizedQuery.isEmpty()) {
+            return emptyList()
+        }
+
+        val normalizedLimit = min(50, limit.coerceAtLeast(1))
+        val loweredQuery = normalizedQuery.lowercase()
+
+        return partyRepository.findAll()
+            .asSequence()
+            .flatMap { it.options.asSequence() }
+            .distinctBy { it.lowercase() }
+            .filter { it.lowercase().contains(loweredQuery) }
+            .sortedWith(
+                compareBy<String> { !it.lowercase().startsWith(loweredQuery) }
+                    .thenBy { it.lowercase() }
+            )
+            .take(normalizedLimit)
+            .toList()
     }
 
     @Transactional

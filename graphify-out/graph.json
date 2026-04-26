@@ -4,83 +4,45 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "party_management_flow",
-        "label": "Party Management Flow",
+        "id": "option_suggestion_contract",
+        "label": "Option Suggestion Contract",
         "nodes": [
-          "partycontroller_partycontroller",
-          "partyservice_partyservice",
-          "partyconverter_partyconverter",
-          "partyrepository_partyrepository",
-          "party_party",
-          "partyentity_partyentity"
+          "partycontroller_option_suggestions_endpoint",
+          "partyservice_suggestoptions",
+          "partyserviceintegrationtest_option_suggestion_order_behavior",
+          "partyserviceintegrationtest_blank_query_behavior",
+          "partyserviceintegrationtest_suggestion_limit_behavior"
         ],
         "relation": "participate_in",
         "confidence": "INFERRED",
-        "confidence_score": 0.9,
-        "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt"
+        "confidence_score": 0.94,
+        "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt"
       },
       {
-        "id": "beer_timeline_summary_flow",
-        "label": "Beer Timeline Summary Flow",
+        "id": "party_status_transition_api",
+        "label": "Party Status Transition API",
         "nodes": [
-          "partycontroller_partycontroller",
-          "beerservice_beerservice",
-          "partyrepository_partyrepository",
-          "beerrepository_beerrepository",
-          "partyentity_partyentity",
-          "beerentity_beerentity"
-        ],
-        "relation": "participate_in",
-        "confidence": "INFERRED",
-        "confidence_score": 0.88,
-        "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt"
-      },
-      {
-        "id": "poll_api_contract",
-        "label": "Poll API Contract Behaviors",
-        "nodes": [
-          "pollcontroller_pollcontroller",
-          "pollcontroller_results_endpoint",
-          "pollserviceintegrationtest_poll_completion_behavior",
-          "pollserviceintegrationtest_outstanding_tracking_behavior",
-          "pollserviceintegrationtest_vote_normalization_behavior",
-          "pollserviceintegrationtest_result_aggregation_behavior",
-          "pollserviceintegrationtest_tie_ordering_expectation"
-        ],
-        "relation": "form",
-        "confidence": "INFERRED",
-        "confidence_score": 0.77,
-        "source_file": "src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt"
-      },
-      {
-        "id": "poll_lifecycle_flow",
-        "label": "Poll Lifecycle Flow",
-        "nodes": [
-          "pollservice_create",
-          "pollservice_addattendee",
-          "pollservice_addvote",
-          "pollservice_updatepoll",
-          "pollservice_completepoll",
-          "pollservice_getresults",
-          "pollservice_getoutstanding"
+          "partycontroller_patch_party_endpoint",
+          "partyservice_patchparty",
+          "partyservice_allowedtransitions"
         ],
         "relation": "participate_in",
         "confidence": "INFERRED",
         "confidence_score": 0.89,
-        "source_file": "src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt"
+        "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt"
       },
       {
-        "id": "poll_model_representations",
-        "label": "Poll Model Representations",
+        "id": "graphify_project_workflow",
+        "label": "Graphify Project Workflow",
         "nodes": [
-          "polldto_polldto",
-          "poll_poll",
-          "pollentity_pollentity"
+          "agents_graphify_instructions",
+          "agents_graphify_knowledge_graph",
+          "agents_graphify_update_workflow"
         ],
         "relation": "form",
-        "confidence": "INFERRED",
-        "confidence_score": 0.91,
-        "source_file": "src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt"
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "AGENTS.md"
       }
     ]
   },
@@ -90,1206 +52,1206 @@
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/GamevoteApiApplicationTests.kt",
       "source_location": "L1",
-      "id": "test_kotlin_at_tailor_gamevoteapi_gamevoteapiapplicationtests_kt",
-      "community": 8,
-      "norm_label": "gamevoteapiapplicationtests.kt"
+      "community": 9,
+      "norm_label": "gamevoteapiapplicationtests.kt",
+      "id": "test_kotlin_at_tailor_gamevoteapi_gamevoteapiapplicationtests_kt"
     },
     {
       "label": "GamevoteApiApplicationTests",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/GamevoteApiApplicationTests.kt",
       "source_location": "L8",
-      "id": "gamevoteapiapplicationtests_gamevoteapiapplicationtests",
-      "community": 8,
-      "norm_label": "gamevoteapiapplicationtests"
+      "community": 9,
+      "norm_label": "gamevoteapiapplicationtests",
+      "id": "gamevoteapiapplicationtests_gamevoteapiapplicationtests"
     },
     {
       "label": ".contextLoads()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/GamevoteApiApplicationTests.kt",
       "source_location": "L12",
-      "id": "gamevoteapiapplicationtests_gamevoteapiapplicationtests_contextloads",
-      "community": 8,
-      "norm_label": ".contextloads()"
+      "community": 9,
+      "norm_label": ".contextloads()",
+      "id": "gamevoteapiapplicationtests_gamevoteapiapplicationtests_contextloads"
     },
     {
       "label": "BeerServiceIntegrationTest.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerServiceIntegrationTest.kt",
       "source_location": "L1",
-      "id": "test_kotlin_at_tailor_gamevoteapi_party_service_domain_beerserviceintegrationtest_kt",
-      "community": 7,
-      "norm_label": "beerserviceintegrationtest.kt"
+      "community": 8,
+      "norm_label": "beerserviceintegrationtest.kt",
+      "id": "test_kotlin_at_tailor_gamevoteapi_party_service_domain_beerserviceintegrationtest_kt"
     },
     {
       "label": "BeerServiceIntegrationTest",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerServiceIntegrationTest.kt",
       "source_location": "L15",
-      "id": "beerserviceintegrationtest_beerserviceintegrationtest",
-      "community": 7,
-      "norm_label": "beerserviceintegrationtest"
+      "community": 8,
+      "norm_label": "beerserviceintegrationtest",
+      "id": "beerserviceintegrationtest_beerserviceintegrationtest"
     },
     {
       "label": ".`should create hourly summary with explicit zero-value gaps for every attendee`()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerServiceIntegrationTest.kt",
       "source_location": "L28",
-      "id": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_hourly_summary_with_explicit_zero_value_gaps_for_every_attendee",
-      "community": 7,
-      "norm_label": ".`should create hourly summary with explicit zero-value gaps for every attendee`()"
+      "community": 8,
+      "norm_label": ".`should create hourly summary with explicit zero-value gaps for every attendee`()",
+      "id": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_hourly_summary_with_explicit_zero_value_gaps_for_every_attendee"
     },
     {
       "label": ".`should create cumulative hourly summary with flat lines for hours without new beers`()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerServiceIntegrationTest.kt",
       "source_location": "L75",
-      "id": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_cumulative_hourly_summary_with_flat_lines_for_hours_without_new_beers",
-      "community": 7,
-      "norm_label": ".`should create cumulative hourly summary with flat lines for hours without new beers`()"
+      "community": 8,
+      "norm_label": ".`should create cumulative hourly summary with flat lines for hours without new beers`()",
+      "id": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_cumulative_hourly_summary_with_flat_lines_for_hours_without_new_beers"
     },
     {
       "label": ".hour()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerServiceIntegrationTest.kt",
       "source_location": "L122",
-      "id": "beerserviceintegrationtest_beerserviceintegrationtest_hour",
-      "community": 7,
-      "norm_label": ".hour()"
+      "community": 8,
+      "norm_label": ".hour()",
+      "id": "beerserviceintegrationtest_beerserviceintegrationtest_hour"
     },
     {
       "label": "PollServiceIntegrationTest.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt",
       "source_location": "L1",
-      "id": "test_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollserviceintegrationtest_kt",
-      "community": 5,
-      "norm_label": "pollserviceintegrationtest.kt"
+      "community": 6,
+      "norm_label": "pollserviceintegrationtest.kt",
+      "id": "test_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollserviceintegrationtest_kt"
     },
     {
       "label": "PollServiceIntegrationTest",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt",
       "source_location": "L10",
-      "id": "pollserviceintegrationtest_pollserviceintegrationtest",
-      "community": 5,
-      "norm_label": "pollserviceintegrationtest"
+      "community": 6,
+      "norm_label": "pollserviceintegrationtest",
+      "id": "pollserviceintegrationtest_pollserviceintegrationtest"
     },
     {
       "label": ".`should create poll, cast votes and get deterministic results`()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt",
       "source_location": "L17",
-      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_create_poll_cast_votes_and_get_deterministic_results",
-      "community": 5,
-      "norm_label": ".`should create poll, cast votes and get deterministic results`()"
+      "community": 6,
+      "norm_label": ".`should create poll, cast votes and get deterministic results`()",
+      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_create_poll_cast_votes_and_get_deterministic_results"
     },
     {
       "label": ".`should return random results when options have same score`()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt",
       "source_location": "L97",
-      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_return_random_results_when_options_have_same_score",
-      "community": 5,
-      "norm_label": ".`should return random results when options have same score`()"
+      "community": 6,
+      "norm_label": ".`should return random results when options have same score`()",
+      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_return_random_results_when_options_have_same_score"
     },
     {
       "label": ".`should track outstanding attendees correctly`()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt",
       "source_location": "L135",
-      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_track_outstanding_attendees_correctly",
-      "community": 5,
-      "norm_label": ".`should track outstanding attendees correctly`()"
+      "community": 6,
+      "norm_label": ".`should track outstanding attendees correctly`()",
+      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_track_outstanding_attendees_correctly"
     },
     {
       "label": ".`should normalize votes with missing options to zero`()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt",
       "source_location": "L177",
-      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_normalize_votes_with_missing_options_to_zero",
-      "community": 5,
-      "norm_label": ".`should normalize votes with missing options to zero`()"
+      "community": 6,
+      "norm_label": ".`should normalize votes with missing options to zero`()",
+      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_normalize_votes_with_missing_options_to_zero"
     },
     {
       "label": ".`should calculate results correctly with mix of upvotes and downvotes`()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt",
       "source_location": "L205",
-      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_calculate_results_correctly_with_mix_of_upvotes_and_downvotes",
-      "community": 5,
-      "norm_label": ".`should calculate results correctly with mix of upvotes and downvotes`()"
+      "community": 6,
+      "norm_label": ".`should calculate results correctly with mix of upvotes and downvotes`()",
+      "id": "pollserviceintegrationtest_pollserviceintegrationtest_should_calculate_results_correctly_with_mix_of_upvotes_and_downvotes"
     },
     {
       "label": "GamevoteApiApplication.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/GamevoteApiApplication.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_gamevoteapiapplication_kt",
-      "community": 9,
-      "norm_label": "gamevoteapiapplication.kt"
+      "community": 10,
+      "norm_label": "gamevoteapiapplication.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_gamevoteapiapplication_kt"
     },
     {
       "label": "GamevoteApiApplication",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/GamevoteApiApplication.kt",
       "source_location": "L6",
-      "id": "gamevoteapiapplication_gamevoteapiapplication",
-      "community": 9,
-      "norm_label": "gamevoteapiapplication"
+      "community": 10,
+      "norm_label": "gamevoteapiapplication",
+      "id": "gamevoteapiapplication_gamevoteapiapplication"
     },
     {
       "label": "main()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/GamevoteApiApplication.kt",
       "source_location": "L9",
-      "id": "gamevoteapiapplication_main",
-      "community": 9,
-      "norm_label": "main()"
+      "community": 10,
+      "norm_label": "main()",
+      "id": "gamevoteapiapplication_main"
     },
     {
       "label": "PartyController.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_partycontroller_kt",
       "community": 2,
-      "norm_label": "partycontroller.kt"
+      "norm_label": "partycontroller.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_partycontroller_kt"
     },
     {
       "label": "PartyController",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L25",
-      "id": "partycontroller_partycontroller",
+      "source_location": "L26",
       "community": 2,
-      "norm_label": "partycontroller"
+      "norm_label": "partycontroller",
+      "id": "partycontroller_partycontroller"
     },
     {
       "label": ".createParty()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L32",
-      "id": "partycontroller_partycontroller_createparty",
+      "source_location": "L33",
       "community": 2,
-      "norm_label": ".createparty()"
+      "norm_label": ".createparty()",
+      "id": "partycontroller_partycontroller_createparty"
     },
     {
       "label": ".toDTO()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L45",
-      "id": "partycontroller_partycontroller_todto",
+      "source_location": "L46",
       "community": 2,
-      "norm_label": ".todto()"
+      "norm_label": ".todto()",
+      "id": "partycontroller_partycontroller_todto"
     },
     {
       "label": ".getParty()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L64",
-      "id": "partycontroller_partycontroller_getparty",
+      "source_location": "L65",
       "community": 2,
-      "norm_label": ".getparty()"
+      "norm_label": ".getparty()",
+      "id": "partycontroller_partycontroller_getparty"
     },
     {
       "label": ".getOptions()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L70",
-      "id": "partycontroller_partycontroller_getoptions",
+      "source_location": "L71",
       "community": 2,
-      "norm_label": ".getoptions()"
+      "norm_label": ".getoptions()",
+      "id": "partycontroller_partycontroller_getoptions"
     },
     {
       "label": ".postOption()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L76",
-      "id": "partycontroller_partycontroller_postoption",
+      "source_location": "L86",
       "community": 2,
-      "norm_label": ".postoption()"
+      "norm_label": ".postoption()",
+      "id": "partycontroller_partycontroller_postoption"
     },
     {
       "label": ".deleteOption()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L87",
-      "id": "partycontroller_partycontroller_deleteoption",
+      "source_location": "L97",
       "community": 2,
-      "norm_label": ".deleteoption()"
+      "norm_label": ".deleteoption()",
+      "id": "partycontroller_partycontroller_deleteoption"
     },
     {
       "label": ".getAttendees()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L92",
-      "id": "partycontroller_partycontroller_getattendees",
+      "source_location": "L102",
       "community": 2,
-      "norm_label": ".getattendees()"
+      "norm_label": ".getattendees()",
+      "id": "partycontroller_partycontroller_getattendees"
     },
     {
       "label": ".postAttendee()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L98",
-      "id": "partycontroller_partycontroller_postattendee",
+      "source_location": "L108",
       "community": 2,
-      "norm_label": ".postattendee()"
+      "norm_label": ".postattendee()",
+      "id": "partycontroller_partycontroller_postattendee"
     },
     {
       "label": ".deleteAttendee()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L105",
-      "id": "partycontroller_partycontroller_deleteattendee",
+      "source_location": "L115",
       "community": 2,
-      "norm_label": ".deleteattendee()"
+      "norm_label": ".deleteattendee()",
+      "id": "partycontroller_partycontroller_deleteattendee"
     },
     {
       "label": ".patchParty()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L110",
-      "id": "partycontroller_partycontroller_patchparty",
+      "source_location": "L120",
       "community": 2,
-      "norm_label": ".patchparty()"
+      "norm_label": ".patchparty()",
+      "id": "partycontroller_partycontroller_patchparty"
     },
     {
       "label": ".postBeer()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L118",
-      "id": "partycontroller_partycontroller_postbeer",
+      "source_location": "L128",
       "community": 2,
-      "norm_label": ".postbeer()"
+      "norm_label": ".postbeer()",
+      "id": "partycontroller_partycontroller_postbeer"
     },
     {
       "label": ".getBeerSummary()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L123",
-      "id": "partycontroller_partycontroller_getbeersummary",
+      "source_location": "L133",
       "community": 2,
-      "norm_label": ".getbeersummary()"
+      "norm_label": ".getbeersummary()",
+      "id": "partycontroller_partycontroller_getbeersummary"
     },
     {
       "label": ".getCumulativeBeerSummary()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L128",
-      "id": "partycontroller_partycontroller_getcumulativebeersummary",
+      "source_location": "L138",
       "community": 2,
-      "norm_label": ".getcumulativebeersummary()"
+      "norm_label": ".getcumulativebeersummary()",
+      "id": "partycontroller_partycontroller_getcumulativebeersummary"
     },
     {
       "label": "PatchPartyDTO.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/PatchPartyDTO.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_patchpartydto_kt",
       "community": 2,
-      "norm_label": "patchpartydto.kt"
+      "norm_label": "patchpartydto.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_patchpartydto_kt"
     },
     {
       "label": "PatchPartyDTO",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/PatchPartyDTO.kt",
       "source_location": "L3",
-      "id": "patchpartydto_patchpartydto",
       "community": 2,
-      "norm_label": "patchpartydto"
+      "norm_label": "patchpartydto",
+      "id": "patchpartydto_patchpartydto"
     },
     {
       "label": "PartyDTO.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/PartyDTO.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_partydto_kt",
       "community": 1,
-      "norm_label": "partydto.kt"
+      "norm_label": "partydto.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_partydto_kt"
     },
     {
       "label": "PartyDTO",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/PartyDTO.kt",
       "source_location": "L7",
-      "id": "partydto_partydto",
       "community": 1,
-      "norm_label": "partydto"
+      "norm_label": "partydto",
+      "id": "partydto_partydto"
     },
     {
       "label": "StringValue.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/StringValue.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_stringvalue_kt",
       "community": 2,
-      "norm_label": "stringvalue.kt"
+      "norm_label": "stringvalue.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_stringvalue_kt"
     },
     {
       "label": "StringValue",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/StringValue.kt",
       "source_location": "L3",
-      "id": "stringvalue_stringvalue",
       "community": 2,
-      "norm_label": "stringvalue"
+      "norm_label": "stringvalue",
+      "id": "stringvalue_stringvalue"
     },
     {
       "label": "BeerDTO.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/BeerDTO.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_beerdto_kt",
       "community": 2,
-      "norm_label": "beerdto.kt"
+      "norm_label": "beerdto.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_beerdto_kt"
     },
     {
       "label": "BeerDTO",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/BeerDTO.kt",
       "source_location": "L3",
-      "id": "beerdto_beerdto",
       "community": 2,
-      "norm_label": "beerdto"
+      "norm_label": "beerdto",
+      "id": "beerdto_beerdto"
     },
     {
       "label": "BeerRepository.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/BeerRepository.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_beerrepository_kt",
       "community": 4,
-      "norm_label": "beerrepository.kt"
+      "norm_label": "beerrepository.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_beerrepository_kt"
     },
     {
       "label": "BeerRepository",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/BeerRepository.kt",
       "source_location": "L6",
-      "id": "beerrepository_beerrepository",
       "community": 4,
-      "norm_label": "beerrepository"
+      "norm_label": "beerrepository",
+      "id": "beerrepository_beerrepository"
     },
     {
       "label": ".findByPartyId()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/BeerRepository.kt",
       "source_location": "L7",
-      "id": "beerrepository_beerrepository_findbypartyid",
       "community": 4,
-      "norm_label": ".findbypartyid()"
+      "norm_label": ".findbypartyid()",
+      "id": "beerrepository_beerrepository_findbypartyid"
     },
     {
       "label": "BeerEntity.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/BeerEntity.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_beerentity_kt",
       "community": 1,
-      "norm_label": "beerentity.kt"
+      "norm_label": "beerentity.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_beerentity_kt"
     },
     {
       "label": "BeerEntity",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/BeerEntity.kt",
       "source_location": "L10",
-      "id": "beerentity_beerentity",
       "community": 1,
-      "norm_label": "beerentity"
+      "norm_label": "beerentity",
+      "id": "beerentity_beerentity"
     },
     {
       "label": "PartyEntity.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/PartyEntity.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_partyentity_kt",
       "community": 1,
-      "norm_label": "partyentity.kt"
+      "norm_label": "partyentity.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_partyentity_kt"
     },
     {
       "label": "PartyEntity",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/PartyEntity.kt",
       "source_location": "L6",
-      "id": "partyentity_partyentity",
       "community": 1,
-      "norm_label": "partyentity"
+      "norm_label": "partyentity",
+      "id": "partyentity_partyentity"
     },
     {
       "label": "PartyRepository.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/PartyRepository.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_partyrepository_kt",
       "community": 4,
-      "norm_label": "partyrepository.kt"
+      "norm_label": "partyrepository.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_partyrepository_kt"
     },
     {
       "label": "PartyRepository",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/PartyRepository.kt",
       "source_location": "L7",
-      "id": "partyrepository_partyrepository",
       "community": 4,
-      "norm_label": "partyrepository"
+      "norm_label": "partyrepository",
+      "id": "partyrepository_partyrepository"
     },
     {
       "label": ".existsByCode()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/PartyRepository.kt",
       "source_location": "L9",
-      "id": "partyrepository_partyrepository_existsbycode",
       "community": 4,
-      "norm_label": ".existsbycode()"
+      "norm_label": ".existsbycode()",
+      "id": "partyrepository_partyrepository_existsbycode"
     },
     {
       "label": ".findByCode()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/PartyRepository.kt",
       "source_location": "L10",
-      "id": "partyrepository_partyrepository_findbycode",
       "community": 4,
-      "norm_label": ".findbycode()"
+      "norm_label": ".findbycode()",
+      "id": "partyrepository_partyrepository_findbycode"
     },
     {
       "label": "PartyService.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_partyservice_kt",
       "community": 1,
-      "norm_label": "partyservice.kt"
+      "norm_label": "partyservice.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_partyservice_kt"
     },
     {
       "label": "PartyService",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L20",
-      "id": "partyservice_partyservice",
+      "source_location": "L21",
       "community": 1,
-      "norm_label": "partyservice"
+      "norm_label": "partyservice",
+      "id": "partyservice_partyservice"
     },
     {
       "label": ".createRandomCode()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L29",
-      "id": "partyservice_partyservice_createrandomcode",
+      "source_location": "L30",
       "community": 1,
-      "norm_label": ".createrandomcode()"
+      "norm_label": ".createrandomcode()",
+      "id": "partyservice_partyservice_createrandomcode"
     },
     {
       "label": ".createCodeForParty()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L34",
-      "id": "partyservice_partyservice_createcodeforparty",
+      "source_location": "L35",
       "community": 1,
-      "norm_label": ".createcodeforparty()"
+      "norm_label": ".createcodeforparty()",
+      "id": "partyservice_partyservice_createcodeforparty"
     },
     {
       "label": ".createParty()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L42",
-      "id": "partyservice_partyservice_createparty",
+      "source_location": "L43",
       "community": 1,
-      "norm_label": ".createparty()"
+      "norm_label": ".createparty()",
+      "id": "partyservice_partyservice_createparty"
     },
     {
       "label": ".getParty()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L50",
-      "id": "partyservice_partyservice_getparty",
+      "source_location": "L51",
       "community": 1,
-      "norm_label": ".getparty()"
+      "norm_label": ".getparty()",
+      "id": "partyservice_partyservice_getparty"
     },
     {
       "label": ".allowedTransitions()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L56",
-      "id": "partyservice_partyservice_allowedtransitions",
+      "source_location": "L57",
       "community": 1,
-      "norm_label": ".allowedtransitions()"
+      "norm_label": ".allowedtransitions()",
+      "id": "partyservice_partyservice_allowedtransitions"
     },
     {
       "label": ".patchParty()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L68",
-      "id": "partyservice_partyservice_patchparty",
+      "source_location": "L69",
       "community": 1,
-      "norm_label": ".patchparty()"
+      "norm_label": ".patchparty()",
+      "id": "partyservice_partyservice_patchparty"
     },
     {
       "label": ".addOption()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L115",
-      "id": "partyservice_partyservice_addoption",
+      "source_location": "L116",
       "community": 1,
-      "norm_label": ".addoption()"
+      "norm_label": ".addoption()",
+      "id": "partyservice_partyservice_addoption"
     },
     {
       "label": ".addAttendee()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L126",
-      "id": "partyservice_partyservice_addattendee",
+      "source_location": "L152",
       "community": 1,
-      "norm_label": ".addattendee()"
+      "norm_label": ".addattendee()",
+      "id": "partyservice_partyservice_addattendee"
     },
     {
       "label": ".deleteAttendee()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L138",
-      "id": "partyservice_partyservice_deleteattendee",
+      "source_location": "L164",
       "community": 1,
-      "norm_label": ".deleteattendee()"
+      "norm_label": ".deleteattendee()",
+      "id": "partyservice_partyservice_deleteattendee"
     },
     {
       "label": ".deleteOption()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L151",
-      "id": "partyservice_partyservice_deleteoption",
+      "source_location": "L177",
       "community": 1,
-      "norm_label": ".deleteoption()"
+      "norm_label": ".deleteoption()",
+      "id": "partyservice_partyservice_deleteoption"
     },
     {
       "label": ".getIdForCode()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L164",
-      "id": "partyservice_partyservice_getidforcode",
+      "source_location": "L190",
       "community": 1,
-      "norm_label": ".getidforcode()"
+      "norm_label": ".getidforcode()",
+      "id": "partyservice_partyservice_getidforcode"
     },
     {
       "label": ".postBeer()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L168",
-      "id": "partyservice_partyservice_postbeer",
+      "source_location": "L194",
       "community": 1,
-      "norm_label": ".postbeer()"
+      "norm_label": ".postbeer()",
+      "id": "partyservice_partyservice_postbeer"
     },
     {
       "label": "BeerService.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_beerservice_kt",
       "community": 4,
-      "norm_label": "beerservice.kt"
+      "norm_label": "beerservice.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_beerservice_kt"
     },
     {
       "label": "BeerService",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt",
       "source_location": "L11",
-      "id": "beerservice_beerservice",
       "community": 4,
-      "norm_label": "beerservice"
+      "norm_label": "beerservice",
+      "id": "beerservice_beerservice"
     },
     {
       "label": ".createHourlySummary()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt",
       "source_location": "L17",
-      "id": "beerservice_beerservice_createhourlysummary",
       "community": 4,
-      "norm_label": ".createhourlysummary()"
+      "norm_label": ".createhourlysummary()",
+      "id": "beerservice_beerservice_createhourlysummary"
     },
     {
       "label": ".createCumulativeHourlySummary()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt",
       "source_location": "L27",
-      "id": "beerservice_beerservice_createcumulativehourlysummary",
       "community": 4,
-      "norm_label": ".createcumulativehourlysummary()"
+      "norm_label": ".createcumulativehourlysummary()",
+      "id": "beerservice_beerservice_createcumulativehourlysummary"
     },
     {
       "label": ".buildTimeline()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt",
       "source_location": "L39",
-      "id": "beerservice_beerservice_buildtimeline",
       "community": 4,
-      "norm_label": ".buildtimeline()"
+      "norm_label": ".buildtimeline()",
+      "id": "beerservice_beerservice_buildtimeline"
     },
     {
       "label": ".truncateToHour()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt",
       "source_location": "L66",
-      "id": "beerservice_beerservice_truncatetohour",
       "community": 4,
-      "norm_label": ".truncatetohour()"
+      "norm_label": ".truncatetohour()",
+      "id": "beerservice_beerservice_truncatetohour"
     },
     {
       "label": "BeerTimeline",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt",
       "source_location": "L70",
-      "id": "beerservice_beertimeline",
       "community": 4,
-      "norm_label": "beertimeline"
+      "norm_label": "beertimeline",
+      "id": "beerservice_beertimeline"
     },
     {
       "label": "PartyConverter.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyConverter.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_partyconverter_kt",
       "community": 1,
-      "norm_label": "partyconverter.kt"
+      "norm_label": "partyconverter.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_partyconverter_kt"
     },
     {
       "label": "PartyConverter",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyConverter.kt",
       "source_location": "L10",
-      "id": "partyconverter_partyconverter",
       "community": 1,
-      "norm_label": "partyconverter"
+      "norm_label": "partyconverter",
+      "id": "partyconverter_partyconverter"
     },
     {
       "label": ".toEntity()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyConverter.kt",
       "source_location": "L14",
-      "id": "partyconverter_partyconverter_toentity",
       "community": 1,
-      "norm_label": ".toentity()"
+      "norm_label": ".toentity()",
+      "id": "partyconverter_partyconverter_toentity"
     },
     {
       "label": ".toDomain()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyConverter.kt",
       "source_location": "L24",
-      "id": "partyconverter_partyconverter_todomain",
       "community": 1,
-      "norm_label": ".todomain()"
+      "norm_label": ".todomain()",
+      "id": "partyconverter_partyconverter_todomain"
     },
     {
       "label": "PartyStatus.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/PartyStatus.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_partystatus_kt",
       "community": 1,
-      "norm_label": "partystatus.kt"
+      "norm_label": "partystatus.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_partystatus_kt"
     },
     {
       "label": "PartyStatus",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/PartyStatus.kt",
       "source_location": "L3",
-      "id": "partystatus_partystatus",
       "community": 1,
-      "norm_label": "partystatus"
+      "norm_label": "partystatus",
+      "id": "partystatus_partystatus"
     },
     {
       "label": "Party.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/Party.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_party_kt",
       "community": 1,
-      "norm_label": "party.kt"
+      "norm_label": "party.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_party_kt"
     },
     {
       "label": "Party",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/Party.kt",
       "source_location": "L5",
-      "id": "party_party",
       "community": 1,
-      "norm_label": "party"
+      "norm_label": "party",
+      "id": "party_party"
     },
     {
       "label": "Beer.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/Beer.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_beer_kt",
       "community": 2,
-      "norm_label": "beer.kt"
+      "norm_label": "beer.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_beer_kt"
     },
     {
       "label": "Beer",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/Beer.kt",
       "source_location": "L3",
-      "id": "beer_beer",
       "community": 2,
-      "norm_label": "beer"
+      "norm_label": "beer",
+      "id": "beer_beer"
     },
     {
       "label": "PatchPartyRequest.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/PatchPartyRequest.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_patchpartyrequest_kt",
       "community": 2,
-      "norm_label": "patchpartyrequest.kt"
+      "norm_label": "patchpartyrequest.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_patchpartyrequest_kt"
     },
     {
       "label": "PatchPartyRequest",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/PatchPartyRequest.kt",
       "source_location": "L3",
-      "id": "patchpartyrequest_patchpartyrequest",
       "community": 2,
-      "norm_label": "patchpartyrequest"
+      "norm_label": "patchpartyrequest",
+      "id": "patchpartyrequest_patchpartyrequest"
     },
     {
       "label": "ContextLink.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/common/dto/ContextLink.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_common_dto_contextlink_kt",
       "community": 3,
-      "norm_label": "contextlink.kt"
+      "norm_label": "contextlink.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_common_dto_contextlink_kt"
     },
     {
       "label": "ContextLink",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/common/dto/ContextLink.kt",
       "source_location": "L3",
-      "id": "contextlink_contextlink",
       "community": 3,
-      "norm_label": "contextlink"
+      "norm_label": "contextlink",
+      "id": "contextlink_contextlink"
     },
     {
       "label": "PollController.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_controller_pollcontroller_kt",
       "community": 3,
-      "norm_label": "pollcontroller.kt"
+      "norm_label": "pollcontroller.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_controller_pollcontroller_kt"
     },
     {
       "label": "PollController",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L16",
-      "id": "pollcontroller_pollcontroller",
       "community": 3,
-      "norm_label": "pollcontroller"
+      "norm_label": "pollcontroller",
+      "id": "pollcontroller_pollcontroller"
     },
     {
       "label": ".createPoll()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L20",
-      "id": "pollcontroller_pollcontroller_createpoll",
       "community": 3,
-      "norm_label": ".createpoll()"
+      "norm_label": ".createpoll()",
+      "id": "pollcontroller_pollcontroller_createpoll"
     },
     {
       "label": ".getPolls()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L27",
-      "id": "pollcontroller_pollcontroller_getpolls",
       "community": 3,
-      "norm_label": ".getpolls()"
+      "norm_label": ".getpolls()",
+      "id": "pollcontroller_pollcontroller_getpolls"
     },
     {
       "label": ".getPoll()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L33",
-      "id": "pollcontroller_pollcontroller_getpoll",
       "community": 3,
-      "norm_label": ".getpoll()"
+      "norm_label": ".getpoll()",
+      "id": "pollcontroller_pollcontroller_getpoll"
     },
     {
       "label": ".putMapping()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L38",
-      "id": "pollcontroller_pollcontroller_putmapping",
       "community": 3,
-      "norm_label": ".putmapping()"
+      "norm_label": ".putmapping()",
+      "id": "pollcontroller_pollcontroller_putmapping"
     },
     {
       "label": ".getVotes()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L45",
-      "id": "pollcontroller_pollcontroller_getvotes",
       "community": 3,
-      "norm_label": ".getvotes()"
+      "norm_label": ".getvotes()",
+      "id": "pollcontroller_pollcontroller_getvotes"
     },
     {
       "label": ".getOutstanding()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L50",
-      "id": "pollcontroller_pollcontroller_getoutstanding",
       "community": 3,
-      "norm_label": ".getoutstanding()"
+      "norm_label": ".getoutstanding()",
+      "id": "pollcontroller_pollcontroller_getoutstanding"
     },
     {
       "label": ".putVote()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L55",
-      "id": "pollcontroller_pollcontroller_putvote",
       "community": 3,
-      "norm_label": ".putvote()"
+      "norm_label": ".putvote()",
+      "id": "pollcontroller_pollcontroller_putvote"
     },
     {
       "label": ".getResults()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L64",
-      "id": "pollcontroller_pollcontroller_getresults",
       "community": 3,
-      "norm_label": ".getresults()"
+      "norm_label": ".getresults()",
+      "id": "pollcontroller_pollcontroller_getresults"
     },
     {
       "label": ".mapDTOToDomain()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L71",
-      "id": "pollcontroller_pollcontroller_mapdtotodomain",
       "community": 3,
-      "norm_label": ".mapdtotodomain()"
+      "norm_label": ".mapdtotodomain()",
+      "id": "pollcontroller_pollcontroller_mapdtotodomain"
     },
     {
       "label": ".mapDomainToDTO()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L78",
-      "id": "pollcontroller_pollcontroller_mapdomaintodto",
       "community": 3,
-      "norm_label": ".mapdomaintodto()"
+      "norm_label": ".mapdomaintodto()",
+      "id": "pollcontroller_pollcontroller_mapdomaintodto"
     },
     {
       "label": ".handleValidationExceptions()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt",
       "source_location": "L92",
-      "id": "pollcontroller_pollcontroller_handlevalidationexceptions",
       "community": 3,
-      "norm_label": ".handlevalidationexceptions()"
+      "norm_label": ".handlevalidationexceptions()",
+      "id": "pollcontroller_pollcontroller_handlevalidationexceptions"
     },
     {
       "label": "PollDTO.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/data/PollDTO.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_polldto_kt",
       "community": 0,
-      "norm_label": "polldto.kt"
+      "norm_label": "polldto.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_polldto_kt"
     },
     {
       "label": "PollDTO",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/data/PollDTO.kt",
       "source_location": "L7",
-      "id": "polldto_polldto",
       "community": 0,
-      "norm_label": "polldto"
+      "norm_label": "polldto",
+      "id": "polldto_polldto"
     },
     {
       "label": "PersonDTO.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/data/PersonDTO.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_persondto_kt",
-      "community": 6,
-      "norm_label": "persondto.kt"
+      "community": 7,
+      "norm_label": "persondto.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_persondto_kt"
     },
     {
       "label": "PersonDTO",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/data/PersonDTO.kt",
       "source_location": "L7",
-      "id": "persondto_persondto",
-      "community": 6,
-      "norm_label": "persondto"
+      "community": 7,
+      "norm_label": "persondto",
+      "id": "persondto_persondto"
     },
     {
       "label": "PersonInPollDTO.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/data/PersonInPollDTO.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_personinpolldto_kt",
-      "community": 6,
-      "norm_label": "personinpolldto.kt"
+      "community": 7,
+      "norm_label": "personinpolldto.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_personinpolldto_kt"
     },
     {
       "label": "PersonInPollDTO",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/data/PersonInPollDTO.kt",
       "source_location": "L5",
-      "id": "personinpolldto_personinpolldto",
-      "community": 6,
-      "norm_label": "personinpolldto"
+      "community": 7,
+      "norm_label": "personinpolldto",
+      "id": "personinpolldto_personinpolldto"
     },
     {
       "label": "Vote.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/Vote.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_vote_kt",
       "community": 0,
-      "norm_label": "vote.kt"
+      "norm_label": "vote.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_vote_kt"
     },
     {
       "label": "Vote",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/Vote.kt",
       "source_location": "L5",
-      "id": "vote_vote",
       "community": 0,
-      "norm_label": "vote"
+      "norm_label": "vote",
+      "id": "vote_vote"
     },
     {
       "label": "PollRepository.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/PollRepository.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_pollrepository_kt",
       "community": 0,
-      "norm_label": "pollrepository.kt"
+      "norm_label": "pollrepository.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_pollrepository_kt"
     },
     {
       "label": "PollRepository",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/PollRepository.kt",
       "source_location": "L6",
-      "id": "pollrepository_pollrepository",
       "community": 0,
-      "norm_label": "pollrepository"
+      "norm_label": "pollrepository",
+      "id": "pollrepository_pollrepository"
     },
     {
       "label": "PollEntity.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/PollEntity.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_pollentity_kt",
       "community": 0,
-      "norm_label": "pollentity.kt"
+      "norm_label": "pollentity.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_pollentity_kt"
     },
     {
       "label": "PollEntity",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/PollEntity.kt",
       "source_location": "L6",
-      "id": "pollentity_pollentity",
       "community": 0,
-      "norm_label": "pollentity"
+      "norm_label": "pollentity",
+      "id": "pollentity_pollentity"
     },
     {
       "label": "Person.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/Person.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_person_kt",
-      "community": 6,
-      "norm_label": "person.kt"
+      "community": 7,
+      "norm_label": "person.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_person_kt"
     },
     {
       "label": "Person",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/Person.kt",
       "source_location": "L7",
-      "id": "person_person",
-      "community": 6,
-      "norm_label": "person"
+      "community": 7,
+      "norm_label": "person",
+      "id": "person_person"
     },
     {
       "label": "VoteRepository.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/VoteRepository.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_voterepository_kt",
-      "community": 12,
-      "norm_label": "voterepository.kt"
+      "community": 0,
+      "norm_label": "voterepository.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_voterepository_kt"
     },
     {
       "label": "VoteRepository",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/persistence/VoteRepository.kt",
       "source_location": "L6",
-      "id": "voterepository_voterepository",
-      "community": 12,
-      "norm_label": "voterepository"
+      "community": 0,
+      "norm_label": "voterepository",
+      "id": "voterepository_voterepository"
     },
     {
       "label": "Poll.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/Poll.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_poll_kt",
       "community": 0,
-      "norm_label": "poll.kt"
+      "norm_label": "poll.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_poll_kt"
     },
     {
       "label": "Poll",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/Poll.kt",
       "source_location": "L3",
-      "id": "poll_poll",
       "community": 0,
-      "norm_label": "poll"
+      "norm_label": "poll",
+      "id": "poll_poll"
     },
     {
       "label": "Status",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/Poll.kt",
       "source_location": "L11",
-      "id": "poll_status",
       "community": 0,
-      "norm_label": "status"
+      "norm_label": "status",
+      "id": "poll_status"
     },
     {
       "label": "PollConverter.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollConverter.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollconverter_kt",
-      "community": 10,
-      "norm_label": "pollconverter.kt"
+      "community": 11,
+      "norm_label": "pollconverter.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollconverter_kt"
     },
     {
       "label": "PollConverter",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollConverter.kt",
       "source_location": "L6",
-      "id": "pollconverter_pollconverter",
-      "community": 10,
-      "norm_label": "pollconverter"
+      "community": 11,
+      "norm_label": "pollconverter",
+      "id": "pollconverter_pollconverter"
     },
     {
       "label": ".toDomain()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollConverter.kt",
       "source_location": "L9",
-      "id": "pollconverter_pollconverter_todomain",
-      "community": 10,
-      "norm_label": ".todomain()"
+      "community": 11,
+      "norm_label": ".todomain()",
+      "id": "pollconverter_pollconverter_todomain"
     },
     {
       "label": "PollService.kt",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L1",
-      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollservice_kt",
       "community": 0,
-      "norm_label": "pollservice.kt"
+      "norm_label": "pollservice.kt",
+      "id": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollservice_kt"
     },
     {
       "label": "PollService",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L13",
-      "id": "pollservice_pollservice",
       "community": 0,
-      "norm_label": "pollservice"
+      "norm_label": "pollservice",
+      "id": "pollservice_pollservice"
     },
     {
       "label": ".create()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L20",
-      "id": "pollservice_pollservice_create",
       "community": 0,
-      "norm_label": ".create()"
+      "norm_label": ".create()",
+      "id": "pollservice_pollservice_create"
     },
     {
       "label": ".getPolls()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L31",
-      "id": "pollservice_pollservice_getpolls",
       "community": 0,
-      "norm_label": ".getpolls()"
+      "norm_label": ".getpolls()",
+      "id": "pollservice_pollservice_getpolls"
     },
     {
       "label": ".getPoll()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L37",
-      "id": "pollservice_pollservice_getpoll",
       "community": 0,
-      "norm_label": ".getpoll()"
+      "norm_label": ".getpoll()",
+      "id": "pollservice_pollservice_getpoll"
     },
     {
       "label": ".updatePoll()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L42",
-      "id": "pollservice_pollservice_updatepoll",
       "community": 0,
-      "norm_label": ".updatepoll()"
+      "norm_label": ".updatepoll()",
+      "id": "pollservice_pollservice_updatepoll"
     },
     {
       "label": ".getVotes()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L68",
-      "id": "pollservice_pollservice_getvotes",
       "community": 0,
-      "norm_label": ".getvotes()"
+      "norm_label": ".getvotes()",
+      "id": "pollservice_pollservice_getvotes"
     },
     {
       "label": ".addAttendee()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L74",
-      "id": "pollservice_pollservice_addattendee",
       "community": 0,
-      "norm_label": ".addattendee()"
+      "norm_label": ".addattendee()",
+      "id": "pollservice_pollservice_addattendee"
     },
     {
       "label": ".addVote()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L82",
-      "id": "pollservice_pollservice_addvote",
       "community": 0,
-      "norm_label": ".addvote()"
+      "norm_label": ".addvote()",
+      "id": "pollservice_pollservice_addvote"
     },
     {
       "label": ".completePoll()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L124",
-      "id": "pollservice_pollservice_completepoll",
       "community": 0,
-      "norm_label": ".completepoll()"
+      "norm_label": ".completepoll()",
+      "id": "pollservice_pollservice_completepoll"
     },
     {
       "label": ".getResults()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L133",
-      "id": "pollservice_pollservice_getresults",
       "community": 0,
-      "norm_label": ".getresults()"
+      "norm_label": ".getresults()",
+      "id": "pollservice_pollservice_getresults"
     },
     {
       "label": ".getOutstanding()",
       "file_type": "code",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt",
       "source_location": "L143",
-      "id": "pollservice_pollservice_getoutstanding",
       "community": 0,
-      "norm_label": ".getoutstanding()"
+      "norm_label": ".getoutstanding()",
+      "id": "pollservice_pollservice_getoutstanding"
     },
     {
       "label": "Poll Results Endpoint",
@@ -1300,9 +1262,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollcontroller_results_endpoint",
       "community": 3,
-      "norm_label": "poll results endpoint"
+      "norm_label": "poll results endpoint",
+      "id": "pollcontroller_results_endpoint"
     },
     {
       "label": "Hourly Summary Zero Gap Behavior",
@@ -1313,9 +1275,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "beerserviceintegrationtest_hourly_gap_behavior",
       "community": 4,
-      "norm_label": "hourly summary zero gap behavior"
+      "norm_label": "hourly summary zero gap behavior",
+      "id": "beerserviceintegrationtest_hourly_gap_behavior"
     },
     {
       "label": "Cumulative Summary Flatline Behavior",
@@ -1326,9 +1288,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "beerserviceintegrationtest_cumulative_flatline_behavior",
       "community": 4,
-      "norm_label": "cumulative summary flatline behavior"
+      "norm_label": "cumulative summary flatline behavior",
+      "id": "beerserviceintegrationtest_cumulative_flatline_behavior"
     },
     {
       "label": "Poll Completion And Result Ordering Behavior",
@@ -1339,9 +1301,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollserviceintegrationtest_poll_completion_behavior",
       "community": 3,
-      "norm_label": "poll completion and result ordering behavior"
+      "norm_label": "poll completion and result ordering behavior",
+      "id": "pollserviceintegrationtest_poll_completion_behavior"
     },
     {
       "label": "Tie Ordering Expectation",
@@ -1352,9 +1314,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollserviceintegrationtest_tie_ordering_expectation",
       "community": 3,
-      "norm_label": "tie ordering expectation"
+      "norm_label": "tie ordering expectation",
+      "id": "pollserviceintegrationtest_tie_ordering_expectation"
     },
     {
       "label": "Outstanding Attendee Tracking Behavior",
@@ -1365,9 +1327,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollserviceintegrationtest_outstanding_tracking_behavior",
       "community": 3,
-      "norm_label": "outstanding attendee tracking behavior"
+      "norm_label": "outstanding attendee tracking behavior",
+      "id": "pollserviceintegrationtest_outstanding_tracking_behavior"
     },
     {
       "label": "Missing Vote Normalization Behavior",
@@ -1378,9 +1340,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollserviceintegrationtest_vote_normalization_behavior",
       "community": 3,
-      "norm_label": "missing vote normalization behavior"
+      "norm_label": "missing vote normalization behavior",
+      "id": "pollserviceintegrationtest_vote_normalization_behavior"
     },
     {
       "label": "Mixed Vote Aggregation Behavior",
@@ -1391,9 +1353,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollserviceintegrationtest_result_aggregation_behavior",
       "community": 3,
-      "norm_label": "mixed vote aggregation behavior"
+      "norm_label": "mixed vote aggregation behavior",
+      "id": "pollserviceintegrationtest_result_aggregation_behavior"
     },
     {
       "label": "GamevoteApiApplication",
@@ -1404,9 +1366,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "gamevoteapiapplication_app",
-      "community": 11,
-      "norm_label": "gamevoteapiapplication"
+      "community": 13,
+      "norm_label": "gamevoteapiapplication",
+      "id": "gamevoteapiapplication_app"
     },
     {
       "label": "Application Context Load Test",
@@ -1417,9 +1379,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "gamevoteapiapplicationtests_context_loads",
-      "community": 11,
-      "norm_label": "application context load test"
+      "community": 13,
+      "norm_label": "application context load test",
+      "id": "gamevoteapiapplicationtests_context_loads"
     },
     {
       "label": "Poll Status",
@@ -1430,9 +1392,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "poll_poll_status",
       "community": 0,
-      "norm_label": "poll status"
+      "norm_label": "poll status",
+      "id": "poll_poll_status"
     },
     {
       "label": "PollConverter.toDomain",
@@ -1443,9 +1405,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollconverter_todomain",
       "community": 0,
-      "norm_label": "pollconverter.todomain"
+      "norm_label": "pollconverter.todomain",
+      "id": "pollconverter_todomain"
     },
     {
       "label": "PollService.create",
@@ -1456,9 +1418,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollservice_create",
       "community": 0,
-      "norm_label": "pollservice.create"
+      "norm_label": "pollservice.create",
+      "id": "pollservice_create"
     },
     {
       "label": "PollService.updatePoll",
@@ -1469,9 +1431,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollservice_updatepoll",
       "community": 0,
-      "norm_label": "pollservice.updatepoll"
+      "norm_label": "pollservice.updatepoll",
+      "id": "pollservice_updatepoll"
     },
     {
       "label": "PollService.getVotes",
@@ -1482,9 +1444,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollservice_getvotes",
       "community": 0,
-      "norm_label": "pollservice.getvotes"
+      "norm_label": "pollservice.getvotes",
+      "id": "pollservice_getvotes"
     },
     {
       "label": "PollService.addAttendee",
@@ -1495,9 +1457,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollservice_addattendee",
       "community": 0,
-      "norm_label": "pollservice.addattendee"
+      "norm_label": "pollservice.addattendee",
+      "id": "pollservice_addattendee"
     },
     {
       "label": "PollService.addVote",
@@ -1508,9 +1470,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollservice_addvote",
       "community": 0,
-      "norm_label": "pollservice.addvote"
+      "norm_label": "pollservice.addvote",
+      "id": "pollservice_addvote"
     },
     {
       "label": "PollService.completePoll",
@@ -1521,9 +1483,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollservice_completepoll",
       "community": 0,
-      "norm_label": "pollservice.completepoll"
+      "norm_label": "pollservice.completepoll",
+      "id": "pollservice_completepoll"
     },
     {
       "label": "PollService.getResults",
@@ -1534,9 +1496,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollservice_getresults",
       "community": 0,
-      "norm_label": "pollservice.getresults"
+      "norm_label": "pollservice.getresults",
+      "id": "pollservice_getresults"
     },
     {
       "label": "PollService.getOutstanding",
@@ -1547,9 +1509,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "pollservice_getoutstanding",
       "community": 0,
-      "norm_label": "pollservice.getoutstanding"
+      "norm_label": "pollservice.getoutstanding",
+      "id": "pollservice_getoutstanding"
     },
     {
       "label": "PostgreSQL Dependency Migration Task",
@@ -1560,9 +1522,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "todo_postgresql_dependency_migration",
-      "community": 13,
-      "norm_label": "postgresql dependency migration task"
+      "community": 14,
+      "norm_label": "postgresql dependency migration task",
+      "id": "todo_postgresql_dependency_migration"
     },
     {
       "label": "Docker Build Simplification",
@@ -1573,9 +1535,306 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "todo_docker_build_simplification",
-      "community": 13,
-      "norm_label": "docker build simplification"
+      "community": 14,
+      "norm_label": "docker build simplification",
+      "id": "todo_docker_build_simplification"
+    },
+    {
+      "label": "PartyServiceIntegrationTest.kt",
+      "file_type": "code",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L1",
+      "id": "test_kotlin_at_tailor_gamevoteapi_party_service_domain_partyserviceintegrationtest_kt",
+      "community": 5,
+      "norm_label": "partyserviceintegrationtest.kt"
+    },
+    {
+      "label": "PartyServiceIntegrationTest",
+      "file_type": "code",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L12",
+      "id": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "community": 5,
+      "norm_label": "partyserviceintegrationtest"
+    },
+    {
+      "label": ".`should suggest matching options from current and previous parties with prefix matches first`()",
+      "file_type": "code",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L22",
+      "id": "partyserviceintegrationtest_partyserviceintegrationtest_should_suggest_matching_options_from_current_and_previous_parties_with_prefix_matches_first",
+      "community": 5,
+      "norm_label": ".`should suggest matching options from current and previous parties with prefix matches first`()"
+    },
+    {
+      "label": ".`should return empty suggestions for blank query`()",
+      "file_type": "code",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L55",
+      "id": "partyserviceintegrationtest_partyserviceintegrationtest_should_return_empty_suggestions_for_blank_query",
+      "community": 5,
+      "norm_label": ".`should return empty suggestions for blank query`()"
+    },
+    {
+      "label": ".`should respect suggestion limit`()",
+      "file_type": "code",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L72",
+      "id": "partyserviceintegrationtest_partyserviceintegrationtest_should_respect_suggestion_limit",
+      "community": 5,
+      "norm_label": ".`should respect suggestion limit`()"
+    },
+    {
+      "label": ".getOptionSuggestions()",
+      "file_type": "code",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": "L77",
+      "id": "partycontroller_partycontroller_getoptionsuggestions",
+      "community": 2,
+      "norm_label": ".getoptionsuggestions()"
+    },
+    {
+      "label": ".suggestOptions()",
+      "file_type": "code",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": "L127",
+      "id": "partyservice_partyservice_suggestoptions",
+      "community": 1,
+      "norm_label": ".suggestoptions()"
+    },
+    {
+      "label": "Option Suggestion Ordering Behavior",
+      "file_type": "code",
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyserviceintegrationtest_option_suggestion_order_behavior",
+      "community": 5,
+      "norm_label": "option suggestion ordering behavior"
+    },
+    {
+      "label": "Blank Query Suggestion Behavior",
+      "file_type": "code",
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyserviceintegrationtest_blank_query_behavior",
+      "community": 5,
+      "norm_label": "blank query suggestion behavior"
+    },
+    {
+      "label": "Suggestion Limit Behavior",
+      "file_type": "code",
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyserviceintegrationtest_suggestion_limit_behavior",
+      "community": 5,
+      "norm_label": "suggestion limit behavior"
+    },
+    {
+      "label": "Create Party Endpoint",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partycontroller_create_party_endpoint",
+      "community": 1,
+      "norm_label": "create party endpoint"
+    },
+    {
+      "label": "Option Suggestions Endpoint",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partycontroller_option_suggestions_endpoint",
+      "community": 5,
+      "norm_label": "option suggestions endpoint"
+    },
+    {
+      "label": "Patch Party Endpoint",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partycontroller_patch_party_endpoint",
+      "community": 2,
+      "norm_label": "patch party endpoint"
+    },
+    {
+      "label": "Beer Summary Endpoint",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partycontroller_beer_summary_endpoint",
+      "community": 2,
+      "norm_label": "beer summary endpoint"
+    },
+    {
+      "label": "Cumulative Beer Summary Endpoint",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partycontroller_cumulative_beer_summary_endpoint",
+      "community": 2,
+      "norm_label": "cumulative beer summary endpoint"
+    },
+    {
+      "label": "PartyService.createParty",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyservice_createparty",
+      "community": 1,
+      "norm_label": "partyservice.createparty"
+    },
+    {
+      "label": "PartyService.suggestOptions",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyservice_suggestoptions",
+      "community": 5,
+      "norm_label": "partyservice.suggestoptions"
+    },
+    {
+      "label": "PartyService.patchParty",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyservice_patchparty",
+      "community": 2,
+      "norm_label": "partyservice.patchparty"
+    },
+    {
+      "label": "PartyService.allowedTransitions",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyservice_allowedtransitions",
+      "community": 2,
+      "norm_label": "partyservice.allowedtransitions"
+    },
+    {
+      "label": "PartyService.addAttendee",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyservice_addattendee",
+      "community": 1,
+      "norm_label": "partyservice.addattendee"
+    },
+    {
+      "label": "PartyService.postBeer",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyservice_postbeer",
+      "community": 1,
+      "norm_label": "partyservice.postbeer"
+    },
+    {
+      "label": "PartyService.getIdForCode",
+      "file_type": "code",
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "partyservice_getidforcode",
+      "community": 2,
+      "norm_label": "partyservice.getidforcode"
+    },
+    {
+      "label": "Graphify Instructions",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agents_graphify_instructions",
+      "community": 12,
+      "norm_label": "graphify instructions"
+    },
+    {
+      "label": "Graphify Knowledge Graph",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agents_graphify_knowledge_graph",
+      "community": 12,
+      "norm_label": "graphify knowledge graph"
+    },
+    {
+      "label": "Graphify Update Workflow",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "agents_graphify_update_workflow",
+      "community": 12,
+      "norm_label": "graphify update workflow"
     }
   ],
   "links": [
@@ -1587,9 +1846,9 @@
       "weight": 1.0,
       "_src": "test_kotlin_at_tailor_gamevoteapi_gamevoteapiapplicationtests_kt",
       "_tgt": "gamevoteapiapplicationtests_gamevoteapiapplicationtests",
+      "confidence_score": 1.0,
       "source": "test_kotlin_at_tailor_gamevoteapi_gamevoteapiapplicationtests_kt",
-      "target": "gamevoteapiapplicationtests_gamevoteapiapplicationtests",
-      "confidence_score": 1.0
+      "target": "gamevoteapiapplicationtests_gamevoteapiapplicationtests"
     },
     {
       "relation": "method",
@@ -1599,9 +1858,9 @@
       "weight": 1.0,
       "_src": "gamevoteapiapplicationtests_gamevoteapiapplicationtests",
       "_tgt": "gamevoteapiapplicationtests_gamevoteapiapplicationtests_contextloads",
+      "confidence_score": 1.0,
       "source": "gamevoteapiapplicationtests_gamevoteapiapplicationtests",
-      "target": "gamevoteapiapplicationtests_gamevoteapiapplicationtests_contextloads",
-      "confidence_score": 1.0
+      "target": "gamevoteapiapplicationtests_gamevoteapiapplicationtests_contextloads"
     },
     {
       "relation": "contains",
@@ -1611,9 +1870,9 @@
       "weight": 1.0,
       "_src": "test_kotlin_at_tailor_gamevoteapi_party_service_domain_beerserviceintegrationtest_kt",
       "_tgt": "beerserviceintegrationtest_beerserviceintegrationtest",
+      "confidence_score": 1.0,
       "source": "test_kotlin_at_tailor_gamevoteapi_party_service_domain_beerserviceintegrationtest_kt",
-      "target": "beerserviceintegrationtest_beerserviceintegrationtest",
-      "confidence_score": 1.0
+      "target": "beerserviceintegrationtest_beerserviceintegrationtest"
     },
     {
       "relation": "method",
@@ -1623,9 +1882,9 @@
       "weight": 1.0,
       "_src": "beerserviceintegrationtest_beerserviceintegrationtest",
       "_tgt": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_hourly_summary_with_explicit_zero_value_gaps_for_every_attendee",
+      "confidence_score": 1.0,
       "source": "beerserviceintegrationtest_beerserviceintegrationtest",
-      "target": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_hourly_summary_with_explicit_zero_value_gaps_for_every_attendee",
-      "confidence_score": 1.0
+      "target": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_hourly_summary_with_explicit_zero_value_gaps_for_every_attendee"
     },
     {
       "relation": "method",
@@ -1635,9 +1894,9 @@
       "weight": 1.0,
       "_src": "beerserviceintegrationtest_beerserviceintegrationtest",
       "_tgt": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_cumulative_hourly_summary_with_flat_lines_for_hours_without_new_beers",
+      "confidence_score": 1.0,
       "source": "beerserviceintegrationtest_beerserviceintegrationtest",
-      "target": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_cumulative_hourly_summary_with_flat_lines_for_hours_without_new_beers",
-      "confidence_score": 1.0
+      "target": "beerserviceintegrationtest_beerserviceintegrationtest_should_create_cumulative_hourly_summary_with_flat_lines_for_hours_without_new_beers"
     },
     {
       "relation": "method",
@@ -1647,9 +1906,9 @@
       "weight": 1.0,
       "_src": "beerserviceintegrationtest_beerserviceintegrationtest",
       "_tgt": "beerserviceintegrationtest_beerserviceintegrationtest_hour",
+      "confidence_score": 1.0,
       "source": "beerserviceintegrationtest_beerserviceintegrationtest",
-      "target": "beerserviceintegrationtest_beerserviceintegrationtest_hour",
-      "confidence_score": 1.0
+      "target": "beerserviceintegrationtest_beerserviceintegrationtest_hour"
     },
     {
       "relation": "contains",
@@ -1659,9 +1918,9 @@
       "weight": 1.0,
       "_src": "test_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollserviceintegrationtest_kt",
       "_tgt": "pollserviceintegrationtest_pollserviceintegrationtest",
+      "confidence_score": 1.0,
       "source": "test_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollserviceintegrationtest_kt",
-      "target": "pollserviceintegrationtest_pollserviceintegrationtest",
-      "confidence_score": 1.0
+      "target": "pollserviceintegrationtest_pollserviceintegrationtest"
     },
     {
       "relation": "method",
@@ -1671,9 +1930,9 @@
       "weight": 1.0,
       "_src": "pollserviceintegrationtest_pollserviceintegrationtest",
       "_tgt": "pollserviceintegrationtest_pollserviceintegrationtest_should_create_poll_cast_votes_and_get_deterministic_results",
+      "confidence_score": 1.0,
       "source": "pollserviceintegrationtest_pollserviceintegrationtest",
-      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_create_poll_cast_votes_and_get_deterministic_results",
-      "confidence_score": 1.0
+      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_create_poll_cast_votes_and_get_deterministic_results"
     },
     {
       "relation": "method",
@@ -1683,9 +1942,9 @@
       "weight": 1.0,
       "_src": "pollserviceintegrationtest_pollserviceintegrationtest",
       "_tgt": "pollserviceintegrationtest_pollserviceintegrationtest_should_return_random_results_when_options_have_same_score",
+      "confidence_score": 1.0,
       "source": "pollserviceintegrationtest_pollserviceintegrationtest",
-      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_return_random_results_when_options_have_same_score",
-      "confidence_score": 1.0
+      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_return_random_results_when_options_have_same_score"
     },
     {
       "relation": "method",
@@ -1695,9 +1954,9 @@
       "weight": 1.0,
       "_src": "pollserviceintegrationtest_pollserviceintegrationtest",
       "_tgt": "pollserviceintegrationtest_pollserviceintegrationtest_should_track_outstanding_attendees_correctly",
+      "confidence_score": 1.0,
       "source": "pollserviceintegrationtest_pollserviceintegrationtest",
-      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_track_outstanding_attendees_correctly",
-      "confidence_score": 1.0
+      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_track_outstanding_attendees_correctly"
     },
     {
       "relation": "method",
@@ -1707,9 +1966,9 @@
       "weight": 1.0,
       "_src": "pollserviceintegrationtest_pollserviceintegrationtest",
       "_tgt": "pollserviceintegrationtest_pollserviceintegrationtest_should_normalize_votes_with_missing_options_to_zero",
+      "confidence_score": 1.0,
       "source": "pollserviceintegrationtest_pollserviceintegrationtest",
-      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_normalize_votes_with_missing_options_to_zero",
-      "confidence_score": 1.0
+      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_normalize_votes_with_missing_options_to_zero"
     },
     {
       "relation": "method",
@@ -1719,9 +1978,9 @@
       "weight": 1.0,
       "_src": "pollserviceintegrationtest_pollserviceintegrationtest",
       "_tgt": "pollserviceintegrationtest_pollserviceintegrationtest_should_calculate_results_correctly_with_mix_of_upvotes_and_downvotes",
+      "confidence_score": 1.0,
       "source": "pollserviceintegrationtest_pollserviceintegrationtest",
-      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_calculate_results_correctly_with_mix_of_upvotes_and_downvotes",
-      "confidence_score": 1.0
+      "target": "pollserviceintegrationtest_pollserviceintegrationtest_should_calculate_results_correctly_with_mix_of_upvotes_and_downvotes"
     },
     {
       "relation": "contains",
@@ -1731,9 +1990,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_gamevoteapiapplication_kt",
       "_tgt": "gamevoteapiapplication_gamevoteapiapplication",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_gamevoteapiapplication_kt",
-      "target": "gamevoteapiapplication_gamevoteapiapplication",
-      "confidence_score": 1.0
+      "target": "gamevoteapiapplication_gamevoteapiapplication"
     },
     {
       "relation": "contains",
@@ -1743,165 +2002,141 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_gamevoteapiapplication_kt",
       "_tgt": "gamevoteapiapplication_main",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_gamevoteapiapplication_kt",
-      "target": "gamevoteapiapplication_main",
-      "confidence_score": 1.0
+      "target": "gamevoteapiapplication_main"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_controller_partycontroller_kt",
       "_tgt": "partycontroller_partycontroller",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_controller_partycontroller_kt",
-      "target": "partycontroller_partycontroller",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_createparty",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_createparty",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_createparty"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_todto",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_todto",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_todto"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L64",
+      "source_location": "L65",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_getparty",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_getparty",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_getparty"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_getoptions",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_getoptions",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_getoptions"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L76",
+      "source_location": "L86",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_postoption",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_postoption",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_postoption"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L87",
+      "source_location": "L97",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_deleteoption",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_deleteoption",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_deleteoption"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L92",
+      "source_location": "L102",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_getattendees",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_getattendees",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_getattendees"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L98",
+      "source_location": "L108",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_postattendee",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_postattendee",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_postattendee"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L105",
+      "source_location": "L115",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_deleteattendee",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_deleteattendee",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_deleteattendee"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L110",
+      "source_location": "L120",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
       "_tgt": "partycontroller_partycontroller_patchparty",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_patchparty",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L118",
-      "weight": 1.0,
-      "_src": "partycontroller_partycontroller",
-      "_tgt": "partycontroller_partycontroller_postbeer",
-      "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_postbeer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
-      "source_location": "L123",
-      "weight": 1.0,
-      "_src": "partycontroller_partycontroller",
-      "_tgt": "partycontroller_partycontroller_getbeersummary",
-      "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_getbeersummary",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_patchparty"
     },
     {
       "relation": "method",
@@ -1910,10 +2145,34 @@
       "source_location": "L128",
       "weight": 1.0,
       "_src": "partycontroller_partycontroller",
-      "_tgt": "partycontroller_partycontroller_getcumulativebeersummary",
+      "_tgt": "partycontroller_partycontroller_postbeer",
+      "confidence_score": 1.0,
       "source": "partycontroller_partycontroller",
-      "target": "partycontroller_partycontroller_getcumulativebeersummary",
-      "confidence_score": 1.0
+      "target": "partycontroller_partycontroller_postbeer"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_src": "partycontroller_partycontroller",
+      "_tgt": "partycontroller_partycontroller_getbeersummary",
+      "confidence_score": 1.0,
+      "source": "partycontroller_partycontroller",
+      "target": "partycontroller_partycontroller_getbeersummary"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_src": "partycontroller_partycontroller",
+      "_tgt": "partycontroller_partycontroller_getcumulativebeersummary",
+      "confidence_score": 1.0,
+      "source": "partycontroller_partycontroller",
+      "target": "partycontroller_partycontroller_getcumulativebeersummary"
     },
     {
       "relation": "calls",
@@ -2060,6 +2319,78 @@
       "target": "pollcontroller_results_endpoint"
     },
     {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": "L77",
+      "weight": 1.0,
+      "_src": "partycontroller_partycontroller",
+      "_tgt": "partycontroller_partycontroller_getoptionsuggestions",
+      "source": "partycontroller_partycontroller",
+      "target": "partycontroller_partycontroller_getoptionsuggestions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_partycontroller",
+      "_tgt": "partycontroller_create_party_endpoint",
+      "source": "partycontroller_partycontroller",
+      "target": "partycontroller_create_party_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_partycontroller",
+      "_tgt": "partycontroller_option_suggestions_endpoint",
+      "source": "partycontroller_partycontroller",
+      "target": "partycontroller_option_suggestions_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_partycontroller",
+      "_tgt": "partycontroller_patch_party_endpoint",
+      "source": "partycontroller_partycontroller",
+      "target": "partycontroller_patch_party_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_partycontroller",
+      "_tgt": "partycontroller_beer_summary_endpoint",
+      "source": "partycontroller_partycontroller",
+      "target": "partycontroller_beer_summary_endpoint"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_partycontroller",
+      "_tgt": "partycontroller_cumulative_beer_summary_endpoint",
+      "source": "partycontroller_partycontroller",
+      "target": "partycontroller_cumulative_beer_summary_endpoint"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/data/PatchPartyDTO.kt",
@@ -2067,9 +2398,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_patchpartydto_kt",
       "_tgt": "patchpartydto_patchpartydto",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_patchpartydto_kt",
-      "target": "patchpartydto_patchpartydto",
-      "confidence_score": 1.0
+      "target": "patchpartydto_patchpartydto"
     },
     {
       "relation": "shares_data_with",
@@ -2091,9 +2422,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_partydto_kt",
       "_tgt": "partydto_partydto",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_partydto_kt",
-      "target": "partydto_partydto",
-      "confidence_score": 1.0
+      "target": "partydto_partydto"
     },
     {
       "relation": "shares_data_with",
@@ -2115,9 +2446,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_stringvalue_kt",
       "_tgt": "stringvalue_stringvalue",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_stringvalue_kt",
-      "target": "stringvalue_stringvalue",
-      "confidence_score": 1.0
+      "target": "stringvalue_stringvalue"
     },
     {
       "relation": "contains",
@@ -2127,9 +2458,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_beerdto_kt",
       "_tgt": "beerdto_beerdto",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_controller_data_beerdto_kt",
-      "target": "beerdto_beerdto",
-      "confidence_score": 1.0
+      "target": "beerdto_beerdto"
     },
     {
       "relation": "shares_data_with",
@@ -2151,9 +2482,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_beerrepository_kt",
       "_tgt": "beerrepository_beerrepository",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_beerrepository_kt",
-      "target": "beerrepository_beerrepository",
-      "confidence_score": 1.0
+      "target": "beerrepository_beerrepository"
     },
     {
       "relation": "method",
@@ -2163,9 +2494,9 @@
       "weight": 1.0,
       "_src": "beerrepository_beerrepository",
       "_tgt": "beerrepository_beerrepository_findbypartyid",
+      "confidence_score": 1.0,
       "source": "beerrepository_beerrepository",
-      "target": "beerrepository_beerrepository_findbypartyid",
-      "confidence_score": 1.0
+      "target": "beerrepository_beerrepository_findbypartyid"
     },
     {
       "relation": "calls",
@@ -2199,9 +2530,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_beerentity_kt",
       "_tgt": "beerentity_beerentity",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_beerentity_kt",
-      "target": "beerentity_beerentity",
-      "confidence_score": 1.0
+      "target": "beerentity_beerentity"
     },
     {
       "relation": "shares_data_with",
@@ -2247,9 +2578,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_partyentity_kt",
       "_tgt": "partyentity_partyentity",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_partyentity_kt",
-      "target": "partyentity_partyentity",
-      "confidence_score": 1.0
+      "target": "partyentity_partyentity"
     },
     {
       "relation": "shares_data_with",
@@ -2295,9 +2626,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_partyrepository_kt",
       "_tgt": "partyrepository_partyrepository",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_persistence_partyrepository_kt",
-      "target": "partyrepository_partyrepository",
-      "confidence_score": 1.0
+      "target": "partyrepository_partyrepository"
     },
     {
       "relation": "method",
@@ -2307,9 +2638,9 @@
       "weight": 1.0,
       "_src": "partyrepository_partyrepository",
       "_tgt": "partyrepository_partyrepository_existsbycode",
+      "confidence_score": 1.0,
       "source": "partyrepository_partyrepository",
-      "target": "partyrepository_partyrepository_existsbycode",
-      "confidence_score": 1.0
+      "target": "partyrepository_partyrepository_existsbycode"
     },
     {
       "relation": "method",
@@ -2319,9 +2650,9 @@
       "weight": 1.0,
       "_src": "partyrepository_partyrepository",
       "_tgt": "partyrepository_partyrepository_findbycode",
+      "confidence_score": 1.0,
       "source": "partyrepository_partyrepository",
-      "target": "partyrepository_partyrepository_findbycode",
-      "confidence_score": 1.0
+      "target": "partyrepository_partyrepository_findbycode"
     },
     {
       "relation": "calls",
@@ -2351,133 +2682,109 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_partyservice_kt",
       "_tgt": "partyservice_partyservice",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_partyservice_kt",
-      "target": "partyservice_partyservice",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_createrandomcode",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_createrandomcode",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_createrandomcode"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_createcodeforparty",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_createcodeforparty",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_createcodeforparty"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_createparty",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_createparty",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_createparty"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_getparty",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_getparty",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_getparty"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L56",
+      "source_location": "L57",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_allowedtransitions",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_allowedtransitions",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_allowedtransitions"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L68",
+      "source_location": "L69",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_patchparty",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_patchparty",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_patchparty"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L115",
+      "source_location": "L116",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_addoption",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_addoption",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_addoption"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L126",
+      "source_location": "L152",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_addattendee",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_addattendee",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L138",
-      "weight": 1.0,
-      "_src": "partyservice_partyservice",
-      "_tgt": "partyservice_partyservice_deleteattendee",
-      "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_deleteattendee",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L151",
-      "weight": 1.0,
-      "_src": "partyservice_partyservice",
-      "_tgt": "partyservice_partyservice_deleteoption",
-      "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_deleteoption",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_addattendee"
     },
     {
       "relation": "method",
@@ -2486,22 +2793,46 @@
       "source_location": "L164",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
-      "_tgt": "partyservice_partyservice_getidforcode",
+      "_tgt": "partyservice_partyservice_deleteattendee",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_getidforcode",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_deleteattendee"
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
-      "source_location": "L168",
+      "source_location": "L177",
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_partyservice_deleteoption",
+      "confidence_score": 1.0,
+      "source": "partyservice_partyservice",
+      "target": "partyservice_partyservice_deleteoption"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_partyservice_getidforcode",
+      "confidence_score": 1.0,
+      "source": "partyservice_partyservice",
+      "target": "partyservice_partyservice_getidforcode"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": "L194",
       "weight": 1.0,
       "_src": "partyservice_partyservice",
       "_tgt": "partyservice_partyservice_postbeer",
+      "confidence_score": 1.0,
       "source": "partyservice_partyservice",
-      "target": "partyservice_partyservice_postbeer",
-      "confidence_score": 1.0
+      "target": "partyservice_partyservice_postbeer"
     },
     {
       "relation": "conceptually_related_to",
@@ -2576,6 +2907,90 @@
       "target": "pollcontroller_pollcontroller"
     },
     {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": "L127",
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_partyservice_suggestoptions",
+      "source": "partyservice_partyservice",
+      "target": "partyservice_partyservice_suggestoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_createparty",
+      "source": "partyservice_partyservice",
+      "target": "partyservice_createparty"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_suggestoptions",
+      "source": "partyservice_partyservice",
+      "target": "partyservice_suggestoptions"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_patchparty",
+      "source": "partyservice_partyservice",
+      "target": "partyservice_patchparty"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_addattendee",
+      "source": "partyservice_partyservice",
+      "target": "partyservice_addattendee"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_postbeer",
+      "source": "partyservice_partyservice",
+      "target": "partyservice_postbeer"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyservice_partyservice",
+      "_tgt": "partyservice_getidforcode",
+      "source": "partyservice_partyservice",
+      "target": "partyservice_getidforcode"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt",
@@ -2583,9 +2998,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_beerservice_kt",
       "_tgt": "beerservice_beerservice",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_beerservice_kt",
-      "target": "beerservice_beerservice",
-      "confidence_score": 1.0
+      "target": "beerservice_beerservice"
     },
     {
       "relation": "contains",
@@ -2595,9 +3010,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_beerservice_kt",
       "_tgt": "beerservice_beertimeline",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_beerservice_kt",
-      "target": "beerservice_beertimeline",
-      "confidence_score": 1.0
+      "target": "beerservice_beertimeline"
     },
     {
       "relation": "method",
@@ -2607,9 +3022,9 @@
       "weight": 1.0,
       "_src": "beerservice_beerservice",
       "_tgt": "beerservice_beerservice_createhourlysummary",
+      "confidence_score": 1.0,
       "source": "beerservice_beerservice",
-      "target": "beerservice_beerservice_createhourlysummary",
-      "confidence_score": 1.0
+      "target": "beerservice_beerservice_createhourlysummary"
     },
     {
       "relation": "method",
@@ -2619,9 +3034,9 @@
       "weight": 1.0,
       "_src": "beerservice_beerservice",
       "_tgt": "beerservice_beerservice_createcumulativehourlysummary",
+      "confidence_score": 1.0,
       "source": "beerservice_beerservice",
-      "target": "beerservice_beerservice_createcumulativehourlysummary",
-      "confidence_score": 1.0
+      "target": "beerservice_beerservice_createcumulativehourlysummary"
     },
     {
       "relation": "method",
@@ -2631,9 +3046,9 @@
       "weight": 1.0,
       "_src": "beerservice_beerservice",
       "_tgt": "beerservice_beerservice_buildtimeline",
+      "confidence_score": 1.0,
       "source": "beerservice_beerservice",
-      "target": "beerservice_beerservice_buildtimeline",
-      "confidence_score": 1.0
+      "target": "beerservice_beerservice_buildtimeline"
     },
     {
       "relation": "method",
@@ -2643,9 +3058,9 @@
       "weight": 1.0,
       "_src": "beerservice_beerservice",
       "_tgt": "beerservice_beerservice_truncatetohour",
+      "confidence_score": 1.0,
       "source": "beerservice_beerservice",
-      "target": "beerservice_beerservice_truncatetohour",
-      "confidence_score": 1.0
+      "target": "beerservice_beerservice_truncatetohour"
     },
     {
       "relation": "conceptually_related_to",
@@ -2691,9 +3106,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_partyconverter_kt",
       "_tgt": "partyconverter_partyconverter",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_partyconverter_kt",
-      "target": "partyconverter_partyconverter",
-      "confidence_score": 1.0
+      "target": "partyconverter_partyconverter"
     },
     {
       "relation": "method",
@@ -2703,9 +3118,9 @@
       "weight": 1.0,
       "_src": "partyconverter_partyconverter",
       "_tgt": "partyconverter_partyconverter_toentity",
+      "confidence_score": 1.0,
       "source": "partyconverter_partyconverter",
-      "target": "partyconverter_partyconverter_toentity",
-      "confidence_score": 1.0
+      "target": "partyconverter_partyconverter_toentity"
     },
     {
       "relation": "method",
@@ -2715,9 +3130,9 @@
       "weight": 1.0,
       "_src": "partyconverter_partyconverter",
       "_tgt": "partyconverter_partyconverter_todomain",
+      "confidence_score": 1.0,
       "source": "partyconverter_partyconverter",
-      "target": "partyconverter_partyconverter_todomain",
-      "confidence_score": 1.0
+      "target": "partyconverter_partyconverter_todomain"
     },
     {
       "relation": "shares_data_with",
@@ -2751,9 +3166,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_partystatus_kt",
       "_tgt": "partystatus_partystatus",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_partystatus_kt",
-      "target": "partystatus_partystatus",
-      "confidence_score": 1.0
+      "target": "partystatus_partystatus"
     },
     {
       "relation": "shares_data_with",
@@ -2775,9 +3190,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_party_kt",
       "_tgt": "party_party",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_party_kt",
-      "target": "party_party",
-      "confidence_score": 1.0
+      "target": "party_party"
     },
     {
       "relation": "contains",
@@ -2787,9 +3202,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_beer_kt",
       "_tgt": "beer_beer",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_beer_kt",
-      "target": "beer_beer",
-      "confidence_score": 1.0
+      "target": "beer_beer"
     },
     {
       "relation": "contains",
@@ -2799,9 +3214,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_patchpartyrequest_kt",
       "_tgt": "patchpartyrequest_patchpartyrequest",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_party_service_domain_data_patchpartyrequest_kt",
-      "target": "patchpartyrequest_patchpartyrequest",
-      "confidence_score": 1.0
+      "target": "patchpartyrequest_patchpartyrequest"
     },
     {
       "relation": "contains",
@@ -2811,9 +3226,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_common_dto_contextlink_kt",
       "_tgt": "contextlink_contextlink",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_common_dto_contextlink_kt",
-      "target": "contextlink_contextlink",
-      "confidence_score": 1.0
+      "target": "contextlink_contextlink"
     },
     {
       "relation": "shares_data_with",
@@ -2835,9 +3250,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_controller_pollcontroller_kt",
       "_tgt": "pollcontroller_pollcontroller",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_controller_pollcontroller_kt",
-      "target": "pollcontroller_pollcontroller",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller"
     },
     {
       "relation": "method",
@@ -2847,9 +3262,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_createpoll",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_createpoll",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_createpoll"
     },
     {
       "relation": "method",
@@ -2859,9 +3274,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_getpolls",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_getpolls",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_getpolls"
     },
     {
       "relation": "method",
@@ -2871,9 +3286,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_getpoll",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_getpoll",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_getpoll"
     },
     {
       "relation": "method",
@@ -2883,9 +3298,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_putmapping",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_putmapping",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_putmapping"
     },
     {
       "relation": "method",
@@ -2895,9 +3310,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_getvotes",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_getvotes",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_getvotes"
     },
     {
       "relation": "method",
@@ -2907,9 +3322,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_getoutstanding",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_getoutstanding",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_getoutstanding"
     },
     {
       "relation": "method",
@@ -2919,9 +3334,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_putvote",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_putvote",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_putvote"
     },
     {
       "relation": "method",
@@ -2931,9 +3346,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_getresults",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_getresults",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_getresults"
     },
     {
       "relation": "method",
@@ -2943,9 +3358,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_mapdtotodomain",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_mapdtotodomain",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_mapdtotodomain"
     },
     {
       "relation": "method",
@@ -2955,9 +3370,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_mapdomaintodto",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_mapdomaintodto",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_mapdomaintodto"
     },
     {
       "relation": "method",
@@ -2967,9 +3382,9 @@
       "weight": 1.0,
       "_src": "pollcontroller_pollcontroller",
       "_tgt": "pollcontroller_pollcontroller_handlevalidationexceptions",
+      "confidence_score": 1.0,
       "source": "pollcontroller_pollcontroller",
-      "target": "pollcontroller_pollcontroller_handlevalidationexceptions",
-      "confidence_score": 1.0
+      "target": "pollcontroller_pollcontroller_handlevalidationexceptions"
     },
     {
       "relation": "references",
@@ -3027,9 +3442,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_polldto_kt",
       "_tgt": "polldto_polldto",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_polldto_kt",
-      "target": "polldto_polldto",
-      "confidence_score": 1.0
+      "target": "polldto_polldto"
     },
     {
       "relation": "semantically_similar_to",
@@ -3051,9 +3466,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_persondto_kt",
       "_tgt": "persondto_persondto",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_persondto_kt",
-      "target": "persondto_persondto",
-      "confidence_score": 1.0
+      "target": "persondto_persondto"
     },
     {
       "relation": "shares_data_with",
@@ -3087,9 +3502,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_personinpolldto_kt",
       "_tgt": "personinpolldto_personinpolldto",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_controller_data_personinpolldto_kt",
-      "target": "personinpolldto_personinpolldto",
-      "confidence_score": 1.0
+      "target": "personinpolldto_personinpolldto"
     },
     {
       "relation": "contains",
@@ -3099,9 +3514,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_vote_kt",
       "_tgt": "vote_vote",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_vote_kt",
-      "target": "vote_vote",
-      "confidence_score": 1.0
+      "target": "vote_vote"
     },
     {
       "relation": "shares_data_with",
@@ -3147,9 +3562,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_pollrepository_kt",
       "_tgt": "pollrepository_pollrepository",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_pollrepository_kt",
-      "target": "pollrepository_pollrepository",
-      "confidence_score": 1.0
+      "target": "pollrepository_pollrepository"
     },
     {
       "relation": "calls",
@@ -3243,9 +3658,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_pollentity_kt",
       "_tgt": "pollentity_pollentity",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_pollentity_kt",
-      "target": "pollentity_pollentity",
-      "confidence_score": 1.0
+      "target": "pollentity_pollentity"
     },
     {
       "relation": "shares_data_with",
@@ -3375,9 +3790,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_person_kt",
       "_tgt": "person_person",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_person_kt",
-      "target": "person_person",
-      "confidence_score": 1.0
+      "target": "person_person"
     },
     {
       "relation": "contains",
@@ -3387,9 +3802,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_voterepository_kt",
       "_tgt": "voterepository_voterepository",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_persistence_voterepository_kt",
-      "target": "voterepository_voterepository",
-      "confidence_score": 1.0
+      "target": "voterepository_voterepository"
     },
     {
       "relation": "calls",
@@ -3411,9 +3826,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_poll_kt",
       "_tgt": "poll_poll",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_poll_kt",
-      "target": "poll_poll",
-      "confidence_score": 1.0
+      "target": "poll_poll"
     },
     {
       "relation": "contains",
@@ -3423,9 +3838,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_poll_kt",
       "_tgt": "poll_status",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_poll_kt",
-      "target": "poll_status",
-      "confidence_score": 1.0
+      "target": "poll_status"
     },
     {
       "relation": "shares_data_with",
@@ -3495,9 +3910,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollconverter_kt",
       "_tgt": "pollconverter_pollconverter",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollconverter_kt",
-      "target": "pollconverter_pollconverter",
-      "confidence_score": 1.0
+      "target": "pollconverter_pollconverter"
     },
     {
       "relation": "method",
@@ -3507,9 +3922,9 @@
       "weight": 1.0,
       "_src": "pollconverter_pollconverter",
       "_tgt": "pollconverter_pollconverter_todomain",
+      "confidence_score": 1.0,
       "source": "pollconverter_pollconverter",
-      "target": "pollconverter_pollconverter_todomain",
-      "confidence_score": 1.0
+      "target": "pollconverter_pollconverter_todomain"
     },
     {
       "relation": "references",
@@ -3531,9 +3946,9 @@
       "weight": 1.0,
       "_src": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollservice_kt",
       "_tgt": "pollservice_pollservice",
+      "confidence_score": 1.0,
       "source": "main_kotlin_at_tailor_gamevoteapi_poll_service_domain_pollservice_kt",
-      "target": "pollservice_pollservice",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice"
     },
     {
       "relation": "method",
@@ -3543,9 +3958,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_create",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_create",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_create"
     },
     {
       "relation": "method",
@@ -3555,9 +3970,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_getpolls",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_getpolls",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_getpolls"
     },
     {
       "relation": "method",
@@ -3567,9 +3982,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_getpoll",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_getpoll",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_getpoll"
     },
     {
       "relation": "method",
@@ -3579,9 +3994,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_updatepoll",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_updatepoll",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_updatepoll"
     },
     {
       "relation": "method",
@@ -3591,9 +4006,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_getvotes",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_getvotes",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_getvotes"
     },
     {
       "relation": "method",
@@ -3603,9 +4018,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_addattendee",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_addattendee",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_addattendee"
     },
     {
       "relation": "method",
@@ -3615,9 +4030,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_addvote",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_addvote",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_addvote"
     },
     {
       "relation": "method",
@@ -3627,9 +4042,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_completepoll",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_completepoll",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_completepoll"
     },
     {
       "relation": "method",
@@ -3639,9 +4054,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_getresults",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_getresults",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_getresults"
     },
     {
       "relation": "method",
@@ -3651,9 +4066,9 @@
       "weight": 1.0,
       "_src": "pollservice_pollservice",
       "_tgt": "pollservice_pollservice_getoutstanding",
+      "confidence_score": 1.0,
       "source": "pollservice_pollservice",
-      "target": "pollservice_pollservice_getoutstanding",
-      "confidence_score": 1.0
+      "target": "pollservice_pollservice_getoutstanding"
     },
     {
       "relation": "references",
@@ -3990,87 +4405,289 @@
       "_tgt": "todo_docker_build_simplification",
       "source": "todo_postgresql_dependency_migration",
       "target": "todo_docker_build_simplification"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "test_kotlin_at_tailor_gamevoteapi_party_service_domain_partyserviceintegrationtest_kt",
+      "_tgt": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "source": "test_kotlin_at_tailor_gamevoteapi_party_service_domain_partyserviceintegrationtest_kt",
+      "target": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "_tgt": "partyserviceintegrationtest_partyserviceintegrationtest_should_suggest_matching_options_from_current_and_previous_parties_with_prefix_matches_first",
+      "source": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "target": "partyserviceintegrationtest_partyserviceintegrationtest_should_suggest_matching_options_from_current_and_previous_parties_with_prefix_matches_first",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "_tgt": "partyserviceintegrationtest_partyserviceintegrationtest_should_return_empty_suggestions_for_blank_query",
+      "source": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "target": "partyserviceintegrationtest_partyserviceintegrationtest_should_return_empty_suggestions_for_blank_query",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "_tgt": "partyserviceintegrationtest_partyserviceintegrationtest_should_respect_suggestion_limit",
+      "source": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "target": "partyserviceintegrationtest_partyserviceintegrationtest_should_respect_suggestion_limit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "_tgt": "partyserviceintegrationtest_option_suggestion_order_behavior",
+      "source": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "target": "partyserviceintegrationtest_option_suggestion_order_behavior"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "_tgt": "partyserviceintegrationtest_blank_query_behavior",
+      "source": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "target": "partyserviceintegrationtest_blank_query_behavior"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "_tgt": "partyserviceintegrationtest_suggestion_limit_behavior",
+      "source": "partyserviceintegrationtest_partyserviceintegrationtest",
+      "target": "partyserviceintegrationtest_suggestion_limit_behavior"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.96,
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_option_suggestion_order_behavior",
+      "_tgt": "partyservice_suggestoptions",
+      "source": "partyserviceintegrationtest_option_suggestion_order_behavior",
+      "target": "partyservice_suggestoptions"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.84,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_option_suggestions_endpoint",
+      "_tgt": "partyserviceintegrationtest_option_suggestion_order_behavior",
+      "source": "partyserviceintegrationtest_option_suggestion_order_behavior",
+      "target": "partycontroller_option_suggestions_endpoint"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.97,
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_blank_query_behavior",
+      "_tgt": "partyservice_suggestoptions",
+      "source": "partyserviceintegrationtest_blank_query_behavior",
+      "target": "partyservice_suggestoptions"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.97,
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyserviceintegrationtest_suggestion_limit_behavior",
+      "_tgt": "partyservice_suggestoptions",
+      "source": "partyserviceintegrationtest_suggestion_limit_behavior",
+      "target": "partyservice_suggestoptions"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_create_party_endpoint",
+      "_tgt": "partyservice_createparty",
+      "source": "partycontroller_create_party_endpoint",
+      "target": "partyservice_createparty"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_option_suggestions_endpoint",
+      "_tgt": "partyservice_suggestoptions",
+      "source": "partycontroller_option_suggestions_endpoint",
+      "target": "partyservice_suggestoptions"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.88,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_patch_party_endpoint",
+      "_tgt": "partyservice_patchparty",
+      "source": "partycontroller_patch_party_endpoint",
+      "target": "partyservice_patchparty"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_beer_summary_endpoint",
+      "_tgt": "partyservice_getidforcode",
+      "source": "partycontroller_beer_summary_endpoint",
+      "target": "partyservice_getidforcode"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partycontroller_cumulative_beer_summary_endpoint",
+      "_tgt": "partyservice_getidforcode",
+      "source": "partycontroller_cumulative_beer_summary_endpoint",
+      "target": "partyservice_getidforcode"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "partyservice_patchparty",
+      "_tgt": "partyservice_allowedtransitions",
+      "source": "partyservice_patchparty",
+      "target": "partyservice_allowedtransitions"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "agents_graphify_instructions",
+      "_tgt": "agents_graphify_knowledge_graph",
+      "source": "agents_graphify_instructions",
+      "target": "agents_graphify_knowledge_graph"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "agents_graphify_instructions",
+      "_tgt": "agents_graphify_update_workflow",
+      "source": "agents_graphify_instructions",
+      "target": "agents_graphify_update_workflow"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "AGENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_src": "agents_graphify_update_workflow",
+      "_tgt": "agents_graphify_knowledge_graph",
+      "source": "agents_graphify_knowledge_graph",
+      "target": "agents_graphify_update_workflow"
     }
   ],
   "hyperedges": [
     {
-      "id": "party_management_flow",
-      "label": "Party Management Flow",
+      "id": "option_suggestion_contract",
+      "label": "Option Suggestion Contract",
       "nodes": [
-        "partycontroller_partycontroller",
-        "partyservice_partyservice",
-        "partyconverter_partyconverter",
-        "partyrepository_partyrepository",
-        "party_party",
-        "partyentity_partyentity"
+        "partycontroller_option_suggestions_endpoint",
+        "partyservice_suggestoptions",
+        "partyserviceintegrationtest_option_suggestion_order_behavior",
+        "partyserviceintegrationtest_blank_query_behavior",
+        "partyserviceintegrationtest_suggestion_limit_behavior"
       ],
       "relation": "participate_in",
       "confidence": "INFERRED",
-      "confidence_score": 0.9,
-      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt"
+      "confidence_score": 0.94,
+      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyServiceIntegrationTest.kt"
     },
     {
-      "id": "beer_timeline_summary_flow",
-      "label": "Beer Timeline Summary Flow",
+      "id": "party_status_transition_api",
+      "label": "Party Status Transition API",
       "nodes": [
-        "partycontroller_partycontroller",
-        "beerservice_beerservice",
-        "partyrepository_partyrepository",
-        "beerrepository_beerrepository",
-        "partyentity_partyentity",
-        "beerentity_beerentity"
-      ],
-      "relation": "participate_in",
-      "confidence": "INFERRED",
-      "confidence_score": 0.88,
-      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/BeerService.kt"
-    },
-    {
-      "id": "poll_api_contract",
-      "label": "Poll API Contract Behaviors",
-      "nodes": [
-        "pollcontroller_pollcontroller",
-        "pollcontroller_results_endpoint",
-        "pollserviceintegrationtest_poll_completion_behavior",
-        "pollserviceintegrationtest_outstanding_tracking_behavior",
-        "pollserviceintegrationtest_vote_normalization_behavior",
-        "pollserviceintegrationtest_result_aggregation_behavior",
-        "pollserviceintegrationtest_tie_ordering_expectation"
-      ],
-      "relation": "form",
-      "confidence": "INFERRED",
-      "confidence_score": 0.77,
-      "source_file": "src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt"
-    },
-    {
-      "id": "poll_lifecycle_flow",
-      "label": "Poll Lifecycle Flow",
-      "nodes": [
-        "pollservice_create",
-        "pollservice_addattendee",
-        "pollservice_addvote",
-        "pollservice_updatepoll",
-        "pollservice_completepoll",
-        "pollservice_getresults",
-        "pollservice_getoutstanding"
+        "partycontroller_patch_party_endpoint",
+        "partyservice_patchparty",
+        "partyservice_allowedtransitions"
       ],
       "relation": "participate_in",
       "confidence": "INFERRED",
       "confidence_score": 0.89,
-      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt"
+      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/PartyService.kt"
     },
     {
-      "id": "poll_model_representations",
-      "label": "Poll Model Representations",
+      "id": "graphify_project_workflow",
+      "label": "Graphify Project Workflow",
       "nodes": [
-        "polldto_polldto",
-        "poll_poll",
-        "pollentity_pollentity"
+        "agents_graphify_instructions",
+        "agents_graphify_knowledge_graph",
+        "agents_graphify_update_workflow"
       ],
       "relation": "form",
-      "confidence": "INFERRED",
-      "confidence_score": 0.91,
-      "source_file": "src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollService.kt"
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AGENTS.md"
     }
   ]
 }
