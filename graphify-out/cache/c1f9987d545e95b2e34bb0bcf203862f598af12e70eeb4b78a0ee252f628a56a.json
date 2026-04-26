@@ -1,0 +1,1 @@
+{"nodes": [{"id": "beerrepository_beerrepository", "label": "BeerRepository", "file_type": "code", "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/persistence/BeerRepository.kt", "source_location": "6-9", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}

@@ -1,0 +1,1 @@
+{"nodes": [{"id": "patchpartyrequest_patchpartyrequest", "label": "PatchPartyRequest", "file_type": "code", "source_file": "src/main/kotlin/at/tailor/gamevoteapi/party/service/domain/data/PatchPartyRequest.kt", "source_location": "3-5", "source_url": null, "captured_at": null, "author": null, "contributor": null}], "edges": [], "hyperedges": []}
