@@ -119,6 +119,31 @@ class BeerServiceIntegrationTest {
         )
     }
 
+    @Test
+    @Transactional
+    fun `should estimate promille for each attendee at each hour`() {
+        val party = partyRepository.save(
+            PartyEntity(
+                attendees = listOf("Alice", "Bob"),
+                status = "NOMINATION",
+                code = "PROM1A"
+            )
+        )
+        beerRepository.saveAll(
+            listOf(
+                BeerEntity(party = party, attendee = "Alice", createdAt = hour(20, 15)),
+                BeerEntity(party = party, attendee = "Alice", createdAt = hour(22, 5))
+            )
+        )
+
+        val summary = beerService.createPromilleSummary(party.id)
+
+        assertThat(summary["Alice"]).containsKeys(hour(20), hour(21), hour(22))
+        assertThat(summary["Alice"]!![hour(20)]).isGreaterThan(0.0)
+        assertThat(summary["Alice"]!![hour(22)]).isGreaterThan(summary["Alice"]!![hour(21)]!!)
+        assertThat(summary["Bob"]!!.values).allMatch { it == 0.0 }
+    }
+
     private fun hour(hour: Int, minute: Int = 0): LocalDateTime {
         return LocalDateTime.of(2026, 3, 29, hour, minute)
     }

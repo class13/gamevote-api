@@ -5,6 +5,8 @@ import at.tailor.gamevoteapi.party.*
 import at.tailor.gamevoteapi.party.controller.data.BeerDTO
 import at.tailor.gamevoteapi.party.controller.data.PartyDTO
 import at.tailor.gamevoteapi.party.controller.data.PatchPartyDTO
+import at.tailor.gamevoteapi.party.controller.data.PromilleAssumptionsDTO
+import at.tailor.gamevoteapi.party.controller.data.PromilleSummaryDTO
 import at.tailor.gamevoteapi.party.controller.data.StringValue
 import at.tailor.gamevoteapi.party.service.domain.BeerService
 import at.tailor.gamevoteapi.party.service.domain.data.Party
@@ -138,6 +140,20 @@ class PartyController(
     @GetMapping("/{code}/beers/summary/cumulative")
     fun getCumulativeBeerSummary(@PathVariable("code") code: String): Map<String, Map<LocalDateTime, Int>> {
        return beerService.createCumulativeHourlySummary(partyService.getIdForCode(code))
+    }
+
+    @GetMapping("/{code}/beers/summary/promille")
+    fun getPromilleSummary(@PathVariable("code") code: String): PromilleSummaryDTO {
+        return PromilleSummaryDTO(
+            assumptions = PromilleAssumptionsDTO(
+                bodyWeightKg = BeerService.DEFAULT_BODY_WEIGHT_KG,
+                beerVolumeMl = BeerService.DEFAULT_BEER_VOLUME_ML,
+                beerAlcoholByVolume = BeerService.DEFAULT_BEER_ALCOHOL_BY_VOLUME,
+                bodyWaterDistribution = BeerService.DEFAULT_BODY_WATER_DISTRIBUTION,
+                alcoholEliminationPerHour = BeerService.DEFAULT_ALCOHOL_ELIMINATION_PER_HOUR
+            ),
+            estimates = beerService.createPromilleSummary(partyService.getIdForCode(code))
+        )
     }
 
 }

@@ -1,53 +1,57 @@
-# Graph Report - .  (2026-04-26)
+# Graph Report - gamevote-api  (2026-09-19)
 
 ## Corpus Check
-- Corpus is ~4,275 words - fits in a single context window. You may not need a graph.
+- 35 files · ~4,560 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 181 nodes · 234 edges · 15 communities detected
-- Extraction: 89% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 24 edges (avg confidence: 0.86)
+- 105 nodes · 127 edges · 18 communities detected
+- Extraction: 85% EXTRACTED · 14% INFERRED · 1% AMBIGUOUS · INFERRED: 18 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
 ## Community Hubs (Navigation)
-- [[_COMMUNITY_Poll Domain Model|Poll Domain Model]]
-- [[_COMMUNITY_Party Domain Flow|Party Domain Flow]]
-- [[_COMMUNITY_Party API DTOs|Party API DTOs]]
-- [[_COMMUNITY_Poll API Layer|Poll API Layer]]
-- [[_COMMUNITY_Beer Timeline Analytics|Beer Timeline Analytics]]
-- [[_COMMUNITY_Option Suggestion Flow|Option Suggestion Flow]]
-- [[_COMMUNITY_Poll Service Tests|Poll Service Tests]]
-- [[_COMMUNITY_Poll Person Models|Poll Person Models]]
-- [[_COMMUNITY_Beer Timeline Tests|Beer Timeline Tests]]
-- [[_COMMUNITY_Spring Boot Test|Spring Boot Test]]
-- [[_COMMUNITY_Application Bootstrap|Application Bootstrap]]
-- [[_COMMUNITY_Poll Mapping|Poll Mapping]]
-- [[_COMMUNITY_Graphify Workflow|Graphify Workflow]]
-- [[_COMMUNITY_Context Load Check|Context Load Check]]
-- [[_COMMUNITY_Build Migration Tasks|Build Migration Tasks]]
+- [[_COMMUNITY_Community 0|Community 0]]
+- [[_COMMUNITY_Community 1|Community 1]]
+- [[_COMMUNITY_Community 2|Community 2]]
+- [[_COMMUNITY_Community 3|Community 3]]
+- [[_COMMUNITY_Community 4|Community 4]]
+- [[_COMMUNITY_Community 5|Community 5]]
+- [[_COMMUNITY_Community 6|Community 6]]
+- [[_COMMUNITY_Community 7|Community 7]]
+- [[_COMMUNITY_Community 8|Community 8]]
+- [[_COMMUNITY_Community 9|Community 9]]
+- [[_COMMUNITY_Community 10|Community 10]]
+- [[_COMMUNITY_Community 11|Community 11]]
+- [[_COMMUNITY_Community 12|Community 12]]
+- [[_COMMUNITY_Community 13|Community 13]]
+- [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 16|Community 16]]
+- [[_COMMUNITY_Community 17|Community 17]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `PartyController` - 32 edges
-2. `PartyService` - 31 edges
-3. `PollService` - 19 edges
-4. `PollController` - 18 edges
-5. `BeerService` - 13 edges
-6. `PollEntity` - 11 edges
-7. `PollService.addVote` - 9 edges
-8. `PollRepository` - 8 edges
-9. `Poll` - 8 edges
-10. `PollConverter.toDomain` - 8 edges
+1. `PartyController` - 17 edges
+2. `PartyService` - 16 edges
+3. `PollEntity` - 10 edges
+4. `BeerService` - 9 edges
+5. `PollService.addVote` - 9 edges
+6. `PollConverter.toDomain` - 8 edges
+7. `PollService` - 8 edges
+8. `PollRepository` - 7 edges
+9. `Poll` - 7 edges
+10. `PollService.updatePoll` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `PartyController` --references--> `Poll Results Endpoint`  [INFERRED]
-  /Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt → src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt
-- `PartyController` --references--> `Create Party Endpoint`  [EXTRACTED]
-  /Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt → src/main/kotlin/at/tailor/gamevoteapi/party/controller/PartyController.kt
-- `Poll Completion And Result Ordering Behavior` --rationale_for--> `PollController`  [INFERRED]
-  src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt → /Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt
-- `Outstanding Attendee Tracking Behavior` --rationale_for--> `PollController`  [INFERRED]
-  src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt → /Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt
-- `Missing Vote Normalization Behavior` --rationale_for--> `PollController`  [INFERRED]
-  src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt → /Users/lucky/Desktop/Development/IdeaProjects/gamevote-api/src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt
+- `PollDTO` --semantically_similar_to--> `Poll`  [INFERRED] [semantically similar]
+  src/main/kotlin/at/tailor/gamevoteapi/poll/controller/data/PollDTO.kt → src/main/kotlin/at/tailor/gamevoteapi/poll/service/domain/Poll.kt
+- `PollController` --rationale_for--> `Poll Completion And Result Ordering Behavior`  [INFERRED]
+  src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt → src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt
+- `Poll Results Endpoint` --rationale_for--> `Tie Ordering Expectation`  [AMBIGUOUS]
+  src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt → src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt
+- `PollController` --rationale_for--> `Outstanding Attendee Tracking Behavior`  [INFERRED]
+  src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt → src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt
+- `PollController` --rationale_for--> `Missing Vote Normalization Behavior`  [INFERRED]
+  src/main/kotlin/at/tailor/gamevoteapi/poll/controller/PollController.kt → src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt
 
 ## Hyperedges (group relationships)
 - **Option Suggestion Contract** — partycontroller_option_suggestions_endpoint, partyservice_suggestoptions, partyserviceintegrationtest_option_suggestion_order_behavior, partyserviceintegrationtest_blank_query_behavior, partyserviceintegrationtest_suggestion_limit_behavior [INFERRED 0.94]
@@ -56,102 +60,126 @@
 
 ## Communities
 
-### Community 0 - "Poll Domain Model"
-Cohesion: 0.11
-Nodes (18): Poll, Poll Status, Status, PollConverter.toDomain, PollDTO, PollEntity, PollRepository, PollService.addAttendee (+10 more)
+### Community 0 - "Community 0"
+Cohesion: 0.33
+Nodes (18): Poll, Poll Status, PollConverter, PollConverter.toDomain, PollDTO, PollEntity, PollRepository, PollService.addAttendee (+10 more)
 
-### Community 1 - "Party Domain Flow"
-Cohesion: 0.07
-Nodes (11): BeerEntity, Party, Create Party Endpoint, PartyConverter, PartyDTO, PartyEntity, PartyService.addAttendee, PartyService.createParty (+3 more)
+### Community 1 - "Community 1"
+Cohesion: 0.12
+Nodes (1): PartyController
 
-### Community 2 - "Party API DTOs"
-Cohesion: 0.07
-Nodes (12): Beer, BeerDTO, Beer Summary Endpoint, Cumulative Beer Summary Endpoint, PartyController, Patch Party Endpoint, PartyService.allowedTransitions, PartyService.getIdForCode (+4 more)
+### Community 2 - "Community 2"
+Cohesion: 0.13
+Nodes (1): PartyService
 
-### Community 3 - "Poll API Layer"
-Cohesion: 0.1
+### Community 3 - "Community 3"
+Cohesion: 0.2
+Nodes (2): BeerService, BeerTimeline
+
+### Community 4 - "Community 4"
+Cohesion: 0.29
 Nodes (8): ContextLink, PollController, Poll Results Endpoint, Outstanding Attendee Tracking Behavior, Poll Completion And Result Ordering Behavior, Mixed Vote Aggregation Behavior, Tie Ordering Expectation, Missing Vote Normalization Behavior
 
-### Community 4 - "Beer Timeline Analytics"
-Cohesion: 0.13
-Nodes (6): BeerRepository, BeerService, BeerTimeline, Cumulative Summary Flatline Behavior, Hourly Summary Zero Gap Behavior, PartyRepository
-
-### Community 5 - "Option Suggestion Flow"
-Cohesion: 0.27
-Nodes (6): Option Suggestions Endpoint, PartyService.suggestOptions, Blank Query Suggestion Behavior, Option Suggestion Ordering Behavior, PartyServiceIntegrationTest, Suggestion Limit Behavior
-
-### Community 6 - "Poll Service Tests"
-Cohesion: 0.29
-Nodes (1): PollServiceIntegrationTest
-
-### Community 7 - "Poll Person Models"
+### Community 5 - "Community 5"
 Cohesion: 0.33
-Nodes (3): Person, PersonDTO, PersonInPollDTO
-
-### Community 8 - "Beer Timeline Tests"
-Cohesion: 0.4
 Nodes (1): BeerServiceIntegrationTest
 
-### Community 9 - "Spring Boot Test"
-Cohesion: 0.67
-Nodes (1): GamevoteApiApplicationTests
+### Community 6 - "Community 6"
+Cohesion: 0.4
+Nodes (6): BeerEntity, Party, PartyConverter, PartyDTO, PartyEntity, PartyStatus
 
-### Community 10 - "Application Bootstrap"
-Cohesion: 0.67
-Nodes (1): GamevoteApiApplication
+### Community 7 - "Community 7"
+Cohesion: 0.4
+Nodes (1): PartyServiceIntegrationTest
 
-### Community 11 - "Poll Mapping"
+### Community 8 - "Community 8"
 Cohesion: 0.67
-Nodes (1): PollConverter
+Nodes (2): PromilleAssumptionsDTO, PromilleSummaryDTO
 
-### Community 12 - "Graphify Workflow"
+### Community 9 - "Community 9"
+Cohesion: 0.67
+Nodes (3): Person, PersonDTO, PersonInPollDTO
+
+### Community 10 - "Community 10"
 Cohesion: 1.0
 Nodes (3): Graphify Instructions, Graphify Knowledge Graph, Graphify Update Workflow
 
-### Community 13 - "Context Load Check"
+### Community 11 - "Community 11"
 Cohesion: 1.0
 Nodes (2): GamevoteApiApplication, Application Context Load Test
 
-### Community 14 - "Build Migration Tasks"
+### Community 12 - "Community 12"
+Cohesion: 1.0
+Nodes (2): PatchPartyDTO, PatchPartyRequest
+
+### Community 13 - "Community 13"
+Cohesion: 1.0
+Nodes (2): Beer, BeerDTO
+
+### Community 14 - "Community 14"
 Cohesion: 1.0
 Nodes (2): Docker Build Simplification, PostgreSQL Dependency Migration Task
 
+### Community 15 - "Community 15"
+Cohesion: 1.0
+Nodes (1): StringValue
+
+### Community 16 - "Community 16"
+Cohesion: 1.0
+Nodes (1): BeerRepository
+
+### Community 17 - "Community 17"
+Cohesion: 1.0
+Nodes (1): PartyRepository
+
 ## Ambiguous Edges - Review These
-- `Poll Results Endpoint` → `Tie Ordering Expectation`  [AMBIGUOUS]
+- `Tie Ordering Expectation` → `Poll Results Endpoint`  [AMBIGUOUS]
   src/test/kotlin/at/tailor/gamevoteapi/poll/service/domain/PollServiceIntegrationTest.kt · relation: rationale_for
 
 ## Knowledge Gaps
-- **13 isolated node(s):** `GamevoteApiApplication`, `BeerTimeline`, `Status`, `Tie Ordering Expectation`, `Outstanding Attendee Tracking Behavior` (+8 more)
+- **25 isolated node(s):** `Application Context Load Test`, `Tie Ordering Expectation`, `Outstanding Attendee Tracking Behavior`, `Missing Vote Normalization Behavior`, `GamevoteApiApplication` (+20 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Poll Service Tests`** (7 nodes): `PollServiceIntegrationTest`, `.`should calculate results correctly with mix of upvotes and downvotes`()`, `.`should create poll, cast votes and get deterministic results`()`, `.`should normalize votes with missing options to zero`()`, `.`should return random results when options have same score`()`, `.`should track outstanding attendees correctly`()`, `PollServiceIntegrationTest.kt`
+- **Thin community `Community 1`** (17 nodes): `PartyController.kt`, `PartyController`, `.createParty()`, `.deleteAttendee()`, `.deleteOption()`, `.getAttendees()`, `.getBeerSummary()`, `.getCumulativeBeerSummary()`, `.getOptions()`, `.getOptionSuggestions()`, `.getParty()`, `.getPromilleSummary()`, `.patchParty()`, `.postAttendee()`, `.postBeer()`, `.postOption()`, `.toDTO()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Beer Timeline Tests`** (5 nodes): `BeerServiceIntegrationTest`, `.hour()`, `.`should create cumulative hourly summary with flat lines for hours without new beers`()`, `.`should create hourly summary with explicit zero-value gaps for every attendee`()`, `BeerServiceIntegrationTest.kt`
+- **Thin community `Community 2`** (15 nodes): `PartyService.kt`, `PartyService`, `.addAttendee()`, `.addOption()`, `.allowedTransitions()`, `.createCodeForParty()`, `.createParty()`, `.createRandomCode()`, `.deleteAttendee()`, `.deleteOption()`, `.getIdForCode()`, `.getParty()`, `.patchParty()`, `.postBeer()`, `.suggestOptions()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Spring Boot Test`** (3 nodes): `GamevoteApiApplicationTests`, `.contextLoads()`, `GamevoteApiApplicationTests.kt`
+- **Thin community `Community 3`** (10 nodes): `BeerService`, `.buildTimeline()`, `.createCumulativeHourlySummary()`, `.createHourlySummary()`, `.createPromilleSummary()`, `.estimatePromille()`, `.roundToTwoDecimals()`, `.truncateToHour()`, `BeerTimeline`, `BeerService.kt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Application Bootstrap`** (3 nodes): `GamevoteApiApplication`, `main()`, `GamevoteApiApplication.kt`
+- **Thin community `Community 5`** (6 nodes): `BeerServiceIntegrationTest`, `.hour()`, `.`should create cumulative hourly summary with flat lines for hours without new beers`()`, `.`should create hourly summary with explicit zero-value gaps for every attendee`()`, `.`should estimate promille for each attendee at each hour`()`, `BeerServiceIntegrationTest.kt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Poll Mapping`** (3 nodes): `PollConverter.kt`, `PollConverter`, `.toDomain()`
+- **Thin community `Community 7`** (5 nodes): `PartyServiceIntegrationTest`, `.`should respect suggestion limit`()`, `.`should return empty suggestions for blank query`()`, `.`should suggest matching options from current and previous parties with prefix matches first`()`, `PartyServiceIntegrationTest.kt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Context Load Check`** (2 nodes): `GamevoteApiApplication`, `Application Context Load Test`
+- **Thin community `Community 8`** (3 nodes): `PromilleSummaryDTO.kt`, `PromilleAssumptionsDTO`, `PromilleSummaryDTO`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Build Migration Tasks`** (2 nodes): `Docker Build Simplification`, `PostgreSQL Dependency Migration Task`
+- **Thin community `Community 11`** (2 nodes): `GamevoteApiApplication`, `Application Context Load Test`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 12`** (2 nodes): `PatchPartyDTO`, `PatchPartyRequest`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 13`** (2 nodes): `Beer`, `BeerDTO`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 14`** (2 nodes): `Docker Build Simplification`, `PostgreSQL Dependency Migration Task`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 15`** (1 nodes): `StringValue`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 16`** (1 nodes): `BeerRepository`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 17`** (1 nodes): `PartyRepository`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **What is the exact relationship between `Poll Results Endpoint` and `Tie Ordering Expectation`?**
+- **What is the exact relationship between `Tie Ordering Expectation` and `Poll Results Endpoint`?**
   _Edge tagged AMBIGUOUS (relation: rationale_for) - confidence is low._
-- **Why does `PartyService` connect `Party Domain Flow` to `Party API DTOs`, `Poll API Layer`, `Beer Timeline Analytics`, `Option Suggestion Flow`?**
-  _High betweenness centrality (0.213) - this node is a cross-community bridge._
-- **Why does `PartyController` connect `Party API DTOs` to `Party Domain Flow`, `Poll API Layer`, `Beer Timeline Analytics`, `Option Suggestion Flow`?**
-  _High betweenness centrality (0.179) - this node is a cross-community bridge._
-- **Why does `PollController` connect `Poll API Layer` to `Party Domain Flow`?**
-  _High betweenness centrality (0.101) - this node is a cross-community bridge._
+- **Why does `PartyService` connect `Community 2` to `Community 4`, `Community 6`?**
+  _High betweenness centrality (0.199) - this node is a cross-community bridge._
+- **Why does `PollController` connect `Community 4` to `Community 2`?**
+  _High betweenness centrality (0.153) - this node is a cross-community bridge._
+- **Why does `PartyController` connect `Community 1` to `Community 4`?**
+  _High betweenness centrality (0.139) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `PartyService` (e.g. with `PartyConverter` and `PollController`) actually correct?**
   _`PartyService` has 2 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 4 inferred relationships involving `PollController` (e.g. with `PartyService` and `Poll Completion And Result Ordering Behavior`) actually correct?**
-  _`PollController` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `GamevoteApiApplication`, `BeerTimeline`, `Status` to the rest of the system?**
-  _13 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Application Context Load Test`, `Tie Ordering Expectation`, `Outstanding Attendee Tracking Behavior` to the rest of the system?**
+  _25 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Community 1` be split into smaller, more focused modules?**
+  _Cohesion score 0.12 - nodes in this community are weakly interconnected._

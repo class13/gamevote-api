@@ -6,13 +6,25 @@ import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.server.ResponseStatusException
+import java.time.Duration
 import java.time.LocalDateTime
+import kotlin.math.max
+import kotlin.math.round
 
 @Service
 class BeerService(
     val beerRepository: BeerRepository,
     val partyRepository: PartyRepository
 ) {
+
+    companion object {
+        const val DEFAULT_BODY_WEIGHT_KG = 80.0
+        const val DEFAULT_BEER_VOLUME_ML = 500
+        const val DEFAULT_BEER_ALCOHOL_BY_VOLUME = 0.05
+        const val DEFAULT_BODY_WATER_DISTRIBUTION = 0.68
+        const val DEFAULT_ALCOHOL_ELIMINATION_PER_HOUR = 0.15
+        private const val ALCOHOL_DENSITY_GRAMS_PER_ML = 0.789
+    }
 
     @Transactional
     fun createHourlySummary(partyId: Long): Map<String, Map<LocalDateTime, Int>> {
@@ -35,6 +47,35 @@ class BeerService(
             }
         }
     }
+
+    @Transactional(readOnly = true)
+    fun createPromilleSummary(partyId: Long): Map<String, Map<LocalDateTime, Double>> {
+        val timeline = buildTimeline(partyId)
+        val beers = beerRepository.findByPartyId(partyId)
+            .groupBy { it.attendee }
+
+        return timeline.attendees.associateWith { attendee ->
+            val attendeeBeers = beers[attendee].orEmpty().sortedBy { it.createdAt }
+            timeline.hours.associateWith { hour ->
+                estimatePromille(attendeeBeers, hour)
+            }
+        }
+    }
+
+    private fun estimatePromille(beers: List<at.tailor.gamevoteapi.party.service.persistence.BeerEntity>, at: LocalDateTime): Double {
+        val alcoholGramsPerBeer = DEFAULT_BEER_VOLUME_ML * DEFAULT_BEER_ALCOHOL_BY_VOLUME * ALCOHOL_DENSITY_GRAMS_PER_ML
+        val distributionVolume = DEFAULT_BODY_WEIGHT_KG * DEFAULT_BODY_WATER_DISTRIBUTION
+
+        return beers
+            .filter { !it.createdAt.isAfter(at.plusHours(1)) }
+            .sumOf { beer ->
+                val hoursSinceDrink = max(0.0, Duration.between(beer.createdAt, at).toMinutes() / 60.0)
+                max(0.0, alcoholGramsPerBeer / distributionVolume - DEFAULT_ALCOHOL_ELIMINATION_PER_HOUR * hoursSinceDrink)
+            }
+            .roundToTwoDecimals()
+    }
+
+    private fun Double.roundToTwoDecimals(): Double = round(this * 100) / 100
 
     private fun buildTimeline(partyId: Long): BeerTimeline {
         val party = partyRepository.findById(partyId).orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) }
