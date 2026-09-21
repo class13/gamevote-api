@@ -54,13 +54,6 @@ class PartyService(
         return partyConverter.toDomain(partyEntity)
     }
 
-    @Transactional(readOnly = true)
-    fun getRecentParties(limit: Int = 10): List<Party> {
-        return partyRepository.findAllByOrderByIdDesc()
-            .take(limit.coerceIn(1, 50))
-            .map(partyConverter::toDomain)
-    }
-
     @Transactional
     fun allowedTransitions(id: Long): Set<PartyStatus> {
         val partyEntity = partyRepository.findById(id).orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) }
