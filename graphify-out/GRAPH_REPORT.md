@@ -1,11 +1,11 @@
-# Graph Report - gamevote-api  (2026-09-19)
+# Graph Report - gamevote-api  (2026-09-21)
 
 ## Corpus Check
-- 35 files · ~4,560 words
+- 35 files · ~4,673 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 105 nodes · 127 edges · 18 communities detected
+- 106 nodes · 128 edges · 18 communities detected
 - Extraction: 85% EXTRACTED · 14% INFERRED · 1% AMBIGUOUS · INFERRED: 18 edges (avg confidence: 0.84)
 - Token cost: 0 input · 0 output
 
@@ -81,7 +81,7 @@ Cohesion: 0.29
 Nodes (8): ContextLink, PollController, Poll Results Endpoint, Outstanding Attendee Tracking Behavior, Poll Completion And Result Ordering Behavior, Mixed Vote Aggregation Behavior, Tie Ordering Expectation, Missing Vote Normalization Behavior
 
 ### Community 5 - "Community 5"
-Cohesion: 0.33
+Cohesion: 0.29
 Nodes (1): BeerServiceIntegrationTest
 
 ### Community 6 - "Community 6"
@@ -110,11 +110,11 @@ Nodes (2): GamevoteApiApplication, Application Context Load Test
 
 ### Community 12 - "Community 12"
 Cohesion: 1.0
-Nodes (2): PatchPartyDTO, PatchPartyRequest
+Nodes (2): Beer, BeerDTO
 
 ### Community 13 - "Community 13"
 Cohesion: 1.0
-Nodes (2): Beer, BeerDTO
+Nodes (2): PatchPartyDTO, PatchPartyRequest
 
 ### Community 14 - "Community 14"
 Cohesion: 1.0
@@ -145,7 +145,7 @@ Nodes (1): PartyRepository
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 3`** (10 nodes): `BeerService`, `.buildTimeline()`, `.createCumulativeHourlySummary()`, `.createHourlySummary()`, `.createPromilleSummary()`, `.estimatePromille()`, `.roundToTwoDecimals()`, `.truncateToHour()`, `BeerTimeline`, `BeerService.kt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 5`** (6 nodes): `BeerServiceIntegrationTest`, `.hour()`, `.`should create cumulative hourly summary with flat lines for hours without new beers`()`, `.`should create hourly summary with explicit zero-value gaps for every attendee`()`, `.`should estimate promille for each attendee at each hour`()`, `BeerServiceIntegrationTest.kt`
+- **Thin community `Community 5`** (7 nodes): `BeerServiceIntegrationTest`, `.hour()`, `.`should create cumulative hourly summary with flat lines for hours without new beers`()`, `.`should create hourly summary with explicit zero-value gaps for every attendee`()`, `.`should estimate promille for each attendee at each hour`()`, `.`should extend summaries to now and continue promille elimination`()`, `BeerServiceIntegrationTest.kt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 7`** (5 nodes): `PartyServiceIntegrationTest`, `.`should respect suggestion limit`()`, `.`should return empty suggestions for blank query`()`, `.`should suggest matching options from current and previous parties with prefix matches first`()`, `PartyServiceIntegrationTest.kt`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -153,9 +153,9 @@ Nodes (1): PartyRepository
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 11`** (2 nodes): `GamevoteApiApplication`, `Application Context Load Test`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 12`** (2 nodes): `PatchPartyDTO`, `PatchPartyRequest`
+- **Thin community `Community 12`** (2 nodes): `Beer`, `BeerDTO`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 13`** (2 nodes): `Beer`, `BeerDTO`
+- **Thin community `Community 13`** (2 nodes): `PatchPartyDTO`, `PatchPartyRequest`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 - **Thin community `Community 14`** (2 nodes): `Docker Build Simplification`, `PostgreSQL Dependency Migration Task`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
@@ -172,11 +172,11 @@ _Questions this graph is uniquely positioned to answer:_
 - **What is the exact relationship between `Tie Ordering Expectation` and `Poll Results Endpoint`?**
   _Edge tagged AMBIGUOUS (relation: rationale_for) - confidence is low._
 - **Why does `PartyService` connect `Community 2` to `Community 4`, `Community 6`?**
-  _High betweenness centrality (0.199) - this node is a cross-community bridge._
+  _High betweenness centrality (0.195) - this node is a cross-community bridge._
 - **Why does `PollController` connect `Community 4` to `Community 2`?**
-  _High betweenness centrality (0.153) - this node is a cross-community bridge._
+  _High betweenness centrality (0.150) - this node is a cross-community bridge._
 - **Why does `PartyController` connect `Community 1` to `Community 4`?**
-  _High betweenness centrality (0.139) - this node is a cross-community bridge._
+  _High betweenness centrality (0.136) - this node is a cross-community bridge._
 - **Are the 2 inferred relationships involving `PartyService` (e.g. with `PartyConverter` and `PollController`) actually correct?**
   _`PartyService` has 2 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `Application Context Load Test`, `Tie Ordering Expectation`, `Outstanding Attendee Tracking Behavior` to the rest of the system?**

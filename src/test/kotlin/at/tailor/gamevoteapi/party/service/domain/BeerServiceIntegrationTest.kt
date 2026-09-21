@@ -44,7 +44,7 @@ class BeerServiceIntegrationTest {
             )
         )
 
-        val summary = beerService.createHourlySummary(party.id)
+        val summary = beerService.createHourlySummary(party.id, hour(23))
 
         assertThat(summary["Alice"]).isEqualTo(
             linkedMapOf(
@@ -91,7 +91,7 @@ class BeerServiceIntegrationTest {
             )
         )
 
-        val summary = beerService.createCumulativeHourlySummary(party.id)
+        val summary = beerService.createCumulativeHourlySummary(party.id, hour(23))
 
         assertThat(summary["Alice"]).isEqualTo(
             linkedMapOf(
@@ -136,12 +136,38 @@ class BeerServiceIntegrationTest {
             )
         )
 
-        val summary = beerService.createPromilleSummary(party.id)
+        val summary = beerService.createPromilleSummary(party.id, hour(23))
 
         assertThat(summary["Alice"]).containsKeys(hour(20), hour(21), hour(22))
         assertThat(summary["Alice"]!![hour(20)]).isGreaterThan(0.0)
         assertThat(summary["Alice"]!![hour(22)]).isGreaterThan(summary["Alice"]!![hour(21)]!!)
         assertThat(summary["Bob"]!!.values).allMatch { it == 0.0 }
+    }
+
+    @Test
+    @Transactional
+    fun `should extend summaries to now and continue promille elimination`() {
+        val party = partyRepository.save(
+            PartyEntity(
+                attendees = listOf("Alice"),
+                status = "NOMINATION",
+                code = "PROM2A"
+            )
+        )
+        beerRepository.saveAll(
+            listOf(
+                BeerEntity(party = party, attendee = "Alice", createdAt = hour(20, 15)),
+                BeerEntity(party = party, attendee = "Alice", createdAt = hour(22, 5))
+            )
+        )
+
+        val now = hour(23, 30)
+        val hourlySummary = beerService.createHourlySummary(party.id, now)
+        val promilleSummary = beerService.createPromilleSummary(party.id, now)
+
+        assertThat(hourlySummary["Alice"]!!.keys.last()).isEqualTo(now)
+        assertThat(promilleSummary["Alice"]!!.keys.last()).isEqualTo(now)
+        assertThat(promilleSummary["Alice"]!![now]).isLessThan(promilleSummary["Alice"]!![hour(23)]!!)
     }
 
     private fun hour(hour: Int, minute: Int = 0): LocalDateTime {

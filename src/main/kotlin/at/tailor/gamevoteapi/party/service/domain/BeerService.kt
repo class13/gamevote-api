@@ -27,8 +27,11 @@ class BeerService(
     }
 
     @Transactional
-    fun createHourlySummary(partyId: Long): Map<String, Map<LocalDateTime, Int>> {
-        val timeline = buildTimeline(partyId)
+    fun createHourlySummary(
+        partyId: Long,
+        now: LocalDateTime = LocalDateTime.now()
+    ): Map<String, Map<LocalDateTime, Int>> {
+        val timeline = buildTimeline(partyId, now)
         return timeline.attendees.associateWith { attendee ->
             timeline.hours.associateWith { hour ->
                 timeline.hourlyCounts[attendee]?.get(hour) ?: 0
@@ -37,8 +40,11 @@ class BeerService(
     }
 
     @Transactional
-    fun createCumulativeHourlySummary(partyId: Long): Map<String, Map<LocalDateTime, Int>> {
-        val timeline = buildTimeline(partyId)
+    fun createCumulativeHourlySummary(
+        partyId: Long,
+        now: LocalDateTime = LocalDateTime.now()
+    ): Map<String, Map<LocalDateTime, Int>> {
+        val timeline = buildTimeline(partyId, now)
         return timeline.attendees.associateWith { attendee ->
             var runningTotal = 0
             timeline.hours.associateWith { hour ->
@@ -49,8 +55,11 @@ class BeerService(
     }
 
     @Transactional(readOnly = true)
-    fun createPromilleSummary(partyId: Long): Map<String, Map<LocalDateTime, Double>> {
-        val timeline = buildTimeline(partyId)
+    fun createPromilleSummary(
+        partyId: Long,
+        now: LocalDateTime = LocalDateTime.now()
+    ): Map<String, Map<LocalDateTime, Double>> {
+        val timeline = buildTimeline(partyId, now)
         val beers = beerRepository.findByPartyId(partyId)
             .groupBy { it.attendee }
 
@@ -77,7 +86,7 @@ class BeerService(
 
     private fun Double.roundToTwoDecimals(): Double = round(this * 100) / 100
 
-    private fun buildTimeline(partyId: Long): BeerTimeline {
+    private fun buildTimeline(partyId: Long, now: LocalDateTime): BeerTimeline {
         val party = partyRepository.findById(partyId).orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND) }
         val beers = beerRepository.findByPartyId(partyId)
         val attendees = (party.attendees + beers.map { it.attendee }).distinct()
@@ -85,9 +94,11 @@ class BeerService(
         val hours = if (observedHours.isEmpty()) {
             emptyList()
         } else {
-            generateSequence(observedHours.first()) { currentHour ->
-                currentHour.plusHours(1).takeUnless { it.isAfter(observedHours.last()) }
+            val lastHour = maxOf(observedHours.last(), now.truncateToHour())
+            val hourlyPoints = generateSequence(observedHours.first()) { currentHour ->
+                currentHour.plusHours(1).takeUnless { it.isAfter(lastHour) }
             }.toList()
+            if (now.isAfter(lastHour)) hourlyPoints + now else hourlyPoints
         }
         val hourlyCounts = beers
             .groupBy { beer -> beer.attendee }
