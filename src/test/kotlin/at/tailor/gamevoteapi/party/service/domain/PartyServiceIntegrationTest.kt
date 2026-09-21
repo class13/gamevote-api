@@ -93,4 +93,27 @@ class PartyServiceIntegrationTest {
 
         assertThat(suggestions).hasSize(2)
     }
+
+    @Test
+    @Transactional
+    fun `should return recent parties newest first`() {
+        partyRepository.save(
+            PartyEntity(
+                attendees = listOf("Alice"),
+                status = "NOMINATION",
+                code = "RECENT1"
+            )
+        )
+        partyRepository.save(
+            PartyEntity(
+                attendees = listOf("Bob", "Charlie"),
+                status = "NOMINATION",
+                code = "RECENT2"
+            )
+        )
+
+        val recentParties = partyService.getRecentParties()
+
+        assertThat(recentParties.map { it.code }).containsExactly("RECENT2", "RECENT1")
+    }
 }

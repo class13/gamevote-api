@@ -8,4 +8,5 @@ import java.util.*
 interface PartyRepository: JpaRepository<PartyEntity, Long> {
     fun existsByCode(code: String): Boolean
     fun findByCode(code: String): Optional<PartyEntity>
+    fun findAllByOrderByIdDesc(): List<PartyEntity>
 }

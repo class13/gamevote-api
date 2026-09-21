@@ -7,6 +7,7 @@ import at.tailor.gamevoteapi.party.controller.data.PartyDTO
 import at.tailor.gamevoteapi.party.controller.data.PatchPartyDTO
 import at.tailor.gamevoteapi.party.controller.data.PromilleAssumptionsDTO
 import at.tailor.gamevoteapi.party.controller.data.PromilleSummaryDTO
+import at.tailor.gamevoteapi.party.controller.data.RecentPartyDTO
 import at.tailor.gamevoteapi.party.controller.data.StringValue
 import at.tailor.gamevoteapi.party.service.domain.BeerService
 import at.tailor.gamevoteapi.party.service.domain.data.Party
@@ -74,6 +75,18 @@ class PartyController(
     fun getOptions(@PathVariable("code") code: String): Set<String> {
         val party = partyService.getParty(partyService.getIdForCode(code))
         return toDTO(party).options
+    }
+
+    @GetMapping("/recent")
+    fun getRecentParties(@RequestParam("limit", defaultValue = "10") limit: Int): List<RecentPartyDTO> {
+        return partyService.getRecentParties(limit).map { party ->
+            RecentPartyDTO(
+                code = party.code,
+                status = party.status.toString(),
+                attendeeCount = party.attendees.size,
+                beerCount = party.beerCount
+            )
+        }
     }
 
     @GetMapping("/{code}/options/suggestions")
